@@ -10,3 +10,4 @@ cdk.out
 .idea
 
 ui/aggregate.json
+dist
