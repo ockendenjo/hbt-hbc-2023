@@ -154,3 +154,11 @@ td:hover {
 .map-select-div {
     padding: 8px;
 }
+
+.w3w {
+    margin-left: -4px;
+    height: 32px;
+    max-height: 32px;
+    display: flex;
+    align-items: center;
+}

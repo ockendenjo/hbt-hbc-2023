@@ -8,7 +8,7 @@ import {fromLonLat} from "ol/proj";
 import {defaults as defaultControls} from "ol/control";
 import VectorSource from "ol/source/Vector";
 import VectorLayer from "ol/layer/Vector";
-import {Stash, StashesFile, Tab} from "./ts/types";
+import {Stash, StashesFile} from "./ts/types";
 import {renderStash} from "./ts/render";
 import {setupTabs} from "./ts/tabs";
 
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const stash = properties.stash as Stash;
             const title = stash.type === "HOUSE" ? "House / flat" : "Stash";
 
-            content.innerHTML = `<b>${title}</b><p>${stash.description}</p>`;
+            content.innerHTML = `<b>${title}</b><p>${stash.description}</p><div class="w3w"><img src="w3w.png" height="32" width="32" alt="w3w"><a href="https://what3words.com/${stash.w3w}" target="_blank">${stash.w3w}</a></div>`;
             overlay.setPosition(e.coordinate);
         });
 

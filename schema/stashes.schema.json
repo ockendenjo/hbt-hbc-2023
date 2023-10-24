@@ -25,13 +25,17 @@
                             "STASH",
                             "HOUSE"
                         ]
+                    },
+                    "w3w": {
+                        "type": "string"
                     }
                 },
                 "required": [
                     "lat",
                     "lon",
                     "description",
-                    "type"
+                    "type",
+                    "w3w"
                 ]
             }
         }
