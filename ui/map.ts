@@ -8,12 +8,14 @@ import {fromLonLat} from "ol/proj";
 import {defaults as defaultControls} from "ol/control";
 import VectorSource from "ol/source/Vector";
 import VectorLayer from "ol/layer/Vector";
-import {Tab} from "./ts/types";
+import {Stash, StashesFile, Tab} from "./ts/types";
+import {renderStash} from "./ts/render";
+import {setupTabs} from "./ts/tabs";
 
 document.addEventListener("DOMContentLoaded", () => {
     const osmLayer = new TileLayer({
         source: new OSM(),
-        opacity: 0.8,
+        opacity: 0.7,
     });
 
     const vectorSource = new VectorSource({wrapX: true});
@@ -42,23 +44,19 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         map.on("click", function (e) {
-            // const feature = map.forEachFeatureAtPixel(e.pixel, (f) => f);
-            // if (!feature) {
-            //     overlay.setPosition(undefined);
-            //     closer.blur();
-            //     return;
-            // }
-            //
-            // const properties = feature.getProperties();
-            // const pub = properties.pub as PubData;
-            //
-            // content.innerHTML = `<b>${pub.name}</b><p>Score: ${pub.stats.meanRating.toFixed(1)}<br>Visits: ${
-            //     pub.stats.visitCount
-            // }</p><div id="popup-link">View details</div>`;
-            // document.getElementById("popup-link").onclick = () => {
-            //     // viewPubDetails(pub);
-            // };
-            // overlay.setPosition(e.coordinate);
+            const feature = map.forEachFeatureAtPixel(e.pixel, (f) => f);
+            if (!feature) {
+                overlay.setPosition(undefined);
+                closer.blur();
+                return;
+            }
+
+            const properties = feature.getProperties();
+            const stash = properties.stash as Stash;
+            const title = stash.type === "HOUSE" ? "House / flat" : "Stash";
+
+            content.innerHTML = `<b>${title}</b><p>${stash.description}</p>`;
+            overlay.setPosition(e.coordinate);
         });
 
         map.addOverlay(overlay);
@@ -71,39 +69,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initialiseMap();
 
-    const tabs: Tab[] = [
-        {
-            tab: document.getElementById("select-map"),
-            contents: document.getElementById("tab-map"),
-            name: "map",
-        },
-        {
-            tab: document.getElementById("select-info"),
-            contents: document.getElementById("tab-info"),
-            name: "instructions",
-        },
-    ];
-
-    function setupTabs() {
-        tabs.forEach((t) => {
-            const otherTabs = tabs.filter((i) => i !== t);
-            t.activate = () => {
-                otherTabs.forEach((ot) => {
-                    ot.contents.style.display = "none";
-                    ot.tab.classList.remove("active");
-                });
-                t.contents.style.display = "";
-                t.tab.classList.add("active");
-            };
-
-            t.tab.addEventListener("click", () => {
-                t.activate();
+    function loadData() {
+        fetch("stashes.json")
+            .then((r) => r.json())
+            .then((j: StashesFile) => j.stashes)
+            .then((stashes) => {
+                stashes.forEach((s) => renderStash(vectorSource, s));
+                mapView.fit(vectorSource.getExtent(), {padding: [20, 20, 20, 20]});
             });
-        });
     }
 
     setupTabs();
-    tabs[0].activate();
+    loadData();
 });
 
 window.onerror = (event, source, lineno, colno, error) => {

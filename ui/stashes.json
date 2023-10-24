@@ -1,0 +1,25 @@
+{
+    "stashes": [
+        {
+            "lat": 55.94179,
+            "lon": -3.18075,
+            "description": "6 Montague Street",
+            "type": "HOUSE"
+        },
+        {
+            "lat": 55.95244,
+            "lon": -3.16962,
+            "description": "In hedge corner",
+            "type": "STASH"
+        },
+        {"lat": 55.9501, "lon": -3.1875, "description": "Description of where the stash can be found", "type": "STASH"},
+        {"lat": 55.9448, "lon": -3.2049, "description": "Description of where the stash can be found", "type": "STASH"},
+        {"lat": 55.9375, "lon": -3.2168, "description": "Description of where the stash can be found", "type": "STASH"},
+        {"lat": 55.9320, "lon": -3.2100, "description": "Description of where the stash can be found", "type": "STASH"},
+        {"lat": 55.9253, "lon": -3.2094, "description": "Description of where the stash can be found", "type": "STASH"},
+        {"lat": 55.9260, "lon": -3.1932, "description": "Description of where the stash can be found", "type": "STASH"},
+        {"lat": 55.9243, "lon": -3.1725, "description": "Description of where the stash can be found", "type": "STASH"},
+        {"lat": 55.9319, "lon": -3.1770, "description": "Description of where the stash can be found", "type": "STASH"},
+        {"lat": 55.9405, "lon": -3.1899, "description": "Description of where the stash can be found", "type": "STASH"}
+    ]
+}

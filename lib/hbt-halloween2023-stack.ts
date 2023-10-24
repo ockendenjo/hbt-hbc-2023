@@ -71,7 +71,7 @@ export class HbtHalloween2023Stack extends cdk.Stack {
                 cachePolicy: CachePolicy.CACHING_OPTIMIZED,
             },
             additionalBehaviors: {
-                "stash.json": noCacheBehaviour,
+                "stashes.json": noCacheBehaviour,
             },
             priceClass: PriceClass.PRICE_CLASS_100,
             httpVersion: HttpVersion.HTTP2_AND_3,

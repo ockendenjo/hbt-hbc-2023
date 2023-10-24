@@ -1,3 +1,16 @@
+export type StashesFile = {
+    stashes: Stash[];
+};
+
+export type Stash = {
+    lat: number;
+    lon: number;
+    description: string;
+    type: StashType;
+};
+
+export type StashType = "STASH" | "HOUSE";
+
 export type PubFile = {
     pubs: Pub[];
 };
