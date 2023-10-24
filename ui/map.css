@@ -1,0 +1,156 @@
+@import "node_modules/ol/ol.css";
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: arial, veranda, "open sans";
+    overflow: hidden;
+}
+
+body {
+    flex-direction: column;
+    display: flex;
+}
+
+h2 {
+    margin: 16px 0 8px 0;
+}
+
+.nav {
+    height: 40px;
+    min-height: 40px;
+    overflow: hidden;
+    background: saddlebrown;
+}
+
+.nav-items {
+    height: 40px;
+    max-height: 40px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.nav-items > div {
+    display: inline-block;
+    height: 40px;
+    min-height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    cursor: pointer;
+    color: white;
+}
+
+.nav-items > div:hover,
+.nav-items > div.active {
+    background: chocolate;
+}
+
+#map {
+    flex: 1 1 auto;
+}
+
+.tab {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.tab-scroll {
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+td {
+    min-width: 60px;
+    width: 60px;
+    height: 60px;
+    background: #f0f0f0;
+    text-align: center;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+td:hover {
+    opacity: 0.5;
+}
+
+.list-item {
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid saddlebrown;
+    cursor: pointer;
+}
+
+.list-item:hover {
+    background: #fafafa;
+}
+
+.list-item div:first-child {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    box-sizing: border-box;
+}
+
+.list-text {
+    line-height: 60px;
+    padding-left: 8px;
+}
+
+#pub-container {
+    padding: 20px;
+}
+
+.info {
+    padding-bottom: 20px;
+}
+
+.visit-ok {
+    background: chocolate;
+}
+
+.visit-good {
+    background: saddlebrown;
+    color: white;
+}
+
+.visit-bad {
+    background: orangered;
+}
+
+.novisit-bad {
+    border: 4px solid orangered;
+    line-height: 52px !important;
+}
+
+.novisit-ok {
+    border: 4px solid chocolate;
+    line-height: 52px !important;
+}
+
+.novisit-good {
+    border: 4px solid saddlebrown;
+    line-height: 52px !important;
+}
+
+.padded {
+    padding: 20px;
+}
+
+.submitted {
+    background-image: linear-gradient(225deg, limegreen, limegreen 10px, transparent 10px, transparent);
+}
+
+.visited {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.map-select-div {
+    padding: 8px;
+}
