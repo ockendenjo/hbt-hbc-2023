@@ -2,7 +2,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://example.com/product.schema.json",
     "title": "HBT Halloween stashes",
-    "description": "Data file",
+    "location": "Data file",
     "type": "object",
     "properties": {
         "stashes": {
@@ -16,8 +16,14 @@
                     "lon": {
                         "type": "number"
                     },
-                    "description": {
+                    "location": {
                         "type": "string"
+                    },
+                    "contents": {
+                        "type": "string"
+                    },
+                    "microtrot": {
+                        "type": "bool"
                     },
                     "type": {
                         "type": "string",
@@ -33,7 +39,9 @@
                 "required": [
                     "lat",
                     "lon",
-                    "description",
+                    "location",
+                    "contents",
+                    "microtrot",
                     "type",
                     "w3w"
                 ]

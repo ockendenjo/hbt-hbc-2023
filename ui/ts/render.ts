@@ -12,29 +12,46 @@ export function renderStash(source: VectorSource, stash: Stash) {
         stash: stash,
     };
     const feature = new Feature(featureConfig);
-    switch (stash.type) {
-        case "HOUSE":
-            feature.setStyle(DIAMOND_BROWN);
-            break;
-        default:
-            feature.setStyle(STYLE_BROWN);
-    }
+    feature.setStyle(getStyle(stash));
     source.addFeature(feature);
 }
 
-export const STYLE_BROWN = new Style({
-    image: new CircleStyle({
-        radius: 7,
-        fill: new Fill({color: "saddlebrown"}),
-        stroke: new Stroke({color: "white", width: 2}),
-    }),
-});
+function getStyle(stash: Stash): Style {
+    switch (stash.type) {
+        case "HOUSE":
+            return stash.microtrot ? STAR_PURPLE : STAR_BROWN;
+        default:
+            return stash.microtrot ? CIRCLE_PURPLE : STYLE_BROWN;
+    }
+}
 
-export const DIAMOND_BROWN = new Style({
-    image: new RegularShape({
-        points: 4,
-        radius: 8,
-        fill: new Fill({color: "saddlebrown"}),
-        stroke: new Stroke({color: "white", width: 2}),
-    }),
-});
+function makeCircle(fill: string): Style {
+    return new Style({
+        image: new CircleStyle({
+            radius: 7,
+            fill: new Fill({color: "saddlebrown"}),
+            stroke: new Stroke({color: "white", width: 2}),
+        }),
+    });
+}
+
+export const COLOUR1 = "saddlebrown";
+export const COLOUR2 = "#fdae6c";
+
+export const STYLE_BROWN = makeCircle(COLOUR1);
+export const CIRCLE_PURPLE = makeCircle(COLOUR2);
+
+function makeStar(fill: string): Style {
+    return new Style({
+        image: new RegularShape({
+            points: 5,
+            radius: 12,
+            radius2: 6,
+            fill: new Fill({color: fill}),
+            stroke: new Stroke({color: "white", width: 2}),
+        }),
+    });
+}
+
+export const STAR_BROWN = makeStar(COLOUR1);
+export const STAR_PURPLE = makeStar(COLOUR2);

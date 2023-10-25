@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const stash = properties.stash as Stash;
             const title = stash.type === "HOUSE" ? "House / flat" : "Stash";
 
-            content.innerHTML = `<b>${title}</b><p>${stash.description}</p><div class="w3w"><img src="w3w.png" height="32" width="32" alt="w3w"><a href="https://what3words.com/${stash.w3w}" target="_blank">${stash.w3w}</a></div>`;
+            content.innerHTML = `<b>${title}</b><p>${stash.location}</p><div class="w3w"><img src="w3w.png" height="32" width="32" alt="w3w"><a href="https://what3words.com/${stash.w3w}" target="_blank">${stash.w3w}</a></div>`;
             overlay.setPosition(e.coordinate);
         });
 
