@@ -23,7 +23,7 @@
                         "type": "string"
                     },
                     "microtrot": {
-                        "type": "bool"
+                        "type": "boolean"
                     },
                     "type": {
                         "type": "string",
