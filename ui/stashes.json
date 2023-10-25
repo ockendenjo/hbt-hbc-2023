@@ -3,7 +3,7 @@
         {
             "lat": 55.94179,
             "lon": -3.18075,
-            "location": "6 Montague Street",
+            "location": "6 Montague Street. In a box tucked in the corner of the fence.",
             "contents": "3 beers",
             "microtrot": true,
             "type": "HOUSE",
@@ -11,8 +11,8 @@
             "points": 10
         },
         {
-            "lat": 55.95244,
-            "lon": -3.16962,
+            "lat": 55.94179,
+            "lon": -3.19075,
             "location": "In hedge corner",
             "contents": "",
             "microtrot": true,
@@ -21,8 +21,8 @@
             "points": 5
         },
         {
-            "lat": 55.9501,
-            "lon": -3.1875,
+            "lat": 55.94179,
+            "lon": -3.17075,
             "location": "Description of where the stash can be found",
             "contents": "",
             "microtrot": false,
@@ -31,8 +31,8 @@
             "points": 1
         },
         {
-            "lat": 55.9448,
-            "lon": -3.2049,
+            "lat": 55.94679,
+            "lon": -3.17075,
             "location": "Description of where the stash can be found",
             "contents": "",
             "microtrot": false,
@@ -41,8 +41,8 @@
             "points": 3
         },
         {
-            "lat": 55.9375,
-            "lon": -3.2168,
+            "lat": 55.94679,
+            "lon": -3.18075,
             "location": "Description of where the stash can be found",
             "contents": "",
             "microtrot": false,
@@ -51,8 +51,8 @@
             "points": 2
         },
         {
-            "lat": 55.9320,
-            "lon": -3.2100,
+            "lat": 55.94679,
+            "lon": -3.19075,
             "location": "Description of where the stash can be found",
             "contents": "",
             "microtrot": false,
@@ -61,8 +61,8 @@
             "points": 3
         },
         {
-            "lat": 55.9253,
-            "lon": -3.2094,
+            "lat": 55.93679,
+            "lon": -3.19075,
             "location": "Description of where the stash can be found",
             "contents": "",
             "microtrot": false,
@@ -71,8 +71,8 @@
             "points": 3
         },
         {
-            "lat": 55.9260,
-            "lon": -3.1932,
+            "lat": 55.93679,
+            "lon": -3.18075,
             "location": "Description of where the stash can be found",
             "contents": "",
             "microtrot": false,
@@ -81,8 +81,8 @@
             "points": 5
         },
         {
-            "lat": 55.9243,
-            "lon": -3.1725,
+            "lat": 55.93679,
+            "lon": -3.17075,
             "location": "Description of where the stash can be found",
             "contents": "",
             "microtrot": false,
@@ -91,8 +91,8 @@
             "points": 4
         },
         {
-            "lat": 55.9319,
-            "lon": -3.1770,
+            "lat": 55.93179,
+            "lon": -3.17075,
             "location": "Description of where the stash can be found",
             "contents": "",
             "microtrot": false,
@@ -101,14 +101,84 @@
             "points": 6
         },
         {
-            "lat": 55.9405,
-            "lon": -3.1899,
+            "lat": 55.93179,
+            "lon": -3.18075,
             "location": "Description of where the stash can be found",
             "contents": "",
             "microtrot": false,
             "type": "STASH",
             "w3w": "lights.fires.gravel",
             "points": 7
+        },
+        {
+            "lat": 55.93179,
+            "lon": -3.19075,
+            "location": "Description of where the stash can be found",
+            "contents": "",
+            "microtrot": false,
+            "type": "STASH",
+            "w3w": "lights.fires.gravel",
+            "points": 7
+        },
+        {
+            "lat": 55.95179,
+            "lon": -3.17075,
+            "location": "Description of where the stash can be found",
+            "contents": "",
+            "microtrot": false,
+            "type": "STASH",
+            "w3w": "lights.fires.gravel",
+            "points": 2
+        },
+        {
+            "lat": 55.95179,
+            "lon": -3.18075,
+            "location": "Description of where the stash can be found",
+            "contents": "",
+            "microtrot": false,
+            "type": "STASH",
+            "w3w": "lights.fires.gravel",
+            "points": 4
+        },
+        {
+            "lat": 55.95179,
+            "lon": -3.19075,
+            "location": "Description of where the stash can be found",
+            "contents": "",
+            "microtrot": false,
+            "type": "STASH",
+            "w3w": "lights.fires.gravel",
+            "points": 5
+        },
+        {
+            "lat": 55.95679,
+            "lon": -3.17075,
+            "location": "Description of where the stash can be found",
+            "contents": "",
+            "microtrot": false,
+            "type": "HOUSE",
+            "w3w": "lights.fires.gravel",
+            "points": 2
+        },
+        {
+            "lat": 55.95679,
+            "lon": -3.18075,
+            "location": "Description of where the stash can be found",
+            "contents": "",
+            "microtrot": true,
+            "type": "STASH",
+            "w3w": "lights.fires.gravel",
+            "points": 4
+        },
+        {
+            "lat": 55.95679,
+            "lon": -3.19075,
+            "location": "Description of where the stash can be found",
+            "contents": "",
+            "microtrot": false,
+            "type": "HOUSE",
+            "w3w": "lights.fires.gravel",
+            "points": 5
         }
     ]
 }
