@@ -7,50 +7,108 @@
             "contents": "3 beers",
             "microtrot": true,
             "type": "HOUSE",
-            "w3w": "lights.fires.gravel"
+            "w3w": "lights.fires.gravel",
+            "points": 10
         },
         {
             "lat": 55.95244,
             "lon": -3.16962,
             "location": "In hedge corner",
+            "contents": "",
+            "microtrot": true,
             "type": "STASH",
-            "w3w": "lights.fires.gravel"
+            "w3w": "lights.fires.gravel",
+            "points": 5
         },
         {
-            "lat": 55.9501, "lon": -3.1875, "location": "Description of where the stash can be found",
-            "type": "STASH", "w3w": "lights.fires.gravel"
+            "lat": 55.9501,
+            "lon": -3.1875,
+            "location": "Description of where the stash can be found",
+            "contents": "",
+            "microtrot": false,
+            "type": "STASH",
+            "w3w": "lights.fires.gravel",
+            "points": 1
         },
         {
-            "lat": 55.9448, "lon": -3.2049, "location": "Description of where the stash can be found",
-            "type": "STASH", "w3w": "lights.fires.gravel"
+            "lat": 55.9448,
+            "lon": -3.2049,
+            "location": "Description of where the stash can be found",
+            "contents": "",
+            "microtrot": false,
+            "type": "STASH",
+            "w3w": "lights.fires.gravel",
+            "points": 3
         },
         {
-            "lat": 55.9375, "lon": -3.2168, "location": "Description of where the stash can be found",
-            "type": "STASH", "w3w": "lights.fires.gravel"
+            "lat": 55.9375,
+            "lon": -3.2168,
+            "location": "Description of where the stash can be found",
+            "contents": "",
+            "microtrot": false,
+            "type": "STASH",
+            "w3w": "lights.fires.gravel",
+            "points": 2
         },
         {
-            "lat": 55.9320, "lon": -3.2100, "location": "Description of where the stash can be found",
-            "type": "STASH", "w3w": "lights.fires.gravel"
+            "lat": 55.9320,
+            "lon": -3.2100,
+            "location": "Description of where the stash can be found",
+            "contents": "",
+            "microtrot": false,
+            "type": "STASH",
+            "w3w": "lights.fires.gravel",
+            "points": 3
         },
         {
-            "lat": 55.9253, "lon": -3.2094, "location": "Description of where the stash can be found",
-            "type": "STASH", "w3w": "lights.fires.gravel"
+            "lat": 55.9253,
+            "lon": -3.2094,
+            "location": "Description of where the stash can be found",
+            "contents": "",
+            "microtrot": false,
+            "type": "STASH",
+            "w3w": "lights.fires.gravel",
+            "points": 3
         },
         {
-            "lat": 55.9260, "lon": -3.1932, "location": "Description of where the stash can be found",
-            "type": "STASH", "w3w": "lights.fires.gravel"
+            "lat": 55.9260,
+            "lon": -3.1932,
+            "location": "Description of where the stash can be found",
+            "contents": "",
+            "microtrot": false,
+            "type": "STASH",
+            "w3w": "lights.fires.gravel",
+            "points": 5
         },
         {
-            "lat": 55.9243, "lon": -3.1725, "location": "Description of where the stash can be found",
-            "type": "STASH", "w3w": "lights.fires.gravel"
+            "lat": 55.9243,
+            "lon": -3.1725,
+            "location": "Description of where the stash can be found",
+            "contents": "",
+            "microtrot": false,
+            "type": "STASH",
+            "w3w": "lights.fires.gravel",
+            "points": 4
         },
         {
-            "lat": 55.9319, "lon": -3.1770, "location": "Description of where the stash can be found",
-            "type": "STASH", "w3w": "lights.fires.gravel"
+            "lat": 55.9319,
+            "lon": -3.1770,
+            "location": "Description of where the stash can be found",
+            "contents": "",
+            "microtrot": false,
+            "type": "STASH",
+            "w3w": "lights.fires.gravel",
+            "points": 6
         },
         {
-            "lat": 55.9405, "lon": -3.1899, "location": "Description of where the stash can be found",
-            "type": "STASH", "w3w": "lights.fires.gravel"
+            "lat": 55.9405,
+            "lon": -3.1899,
+            "location": "Description of where the stash can be found",
+            "contents": "",
+            "microtrot": false,
+            "type": "STASH",
+            "w3w": "lights.fires.gravel",
+            "points": 7
         }
     ]
 }

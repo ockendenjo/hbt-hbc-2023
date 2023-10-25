@@ -10,6 +10,7 @@ export type Stash = {
     microtrot: boolean;
     type: StashType;
     w3w: string;
+    points: number;
 };
 
 export type StashType = "STASH" | "HOUSE";

@@ -162,3 +162,16 @@ td:hover {
     display: flex;
     align-items: center;
 }
+
+.unknown {
+    color: grey;
+}
+
+.demo-mode {
+    background: #ffc000;
+    padding: 4px;
+    text-transform: uppercase;
+    color: darkslategray;
+    font-size: 0.8em;
+    text-align: center;
+}

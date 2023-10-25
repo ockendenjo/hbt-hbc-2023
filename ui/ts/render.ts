@@ -3,7 +3,7 @@ import {Stash} from "./types";
 import {Point} from "ol/geom";
 import {fromLonLat} from "ol/proj";
 import {Feature} from "ol";
-import {Fill, RegularShape, Stroke, Style} from "ol/style";
+import {Fill, RegularShape, Stroke, Style, Text} from "ol/style";
 import CircleStyle from "ol/style/Circle";
 
 export function renderStash(source: VectorSource, stash: Stash) {
@@ -17,41 +17,36 @@ export function renderStash(source: VectorSource, stash: Stash) {
 }
 
 function getStyle(stash: Stash): Style {
+    const fill = stash.microtrot ? COLOUR2 : COLOUR1;
+    const textFill = stash.microtrot ? "black" : "white";
+
+    let image: CircleStyle | RegularShape;
     switch (stash.type) {
         case "HOUSE":
-            return stash.microtrot ? STAR_PURPLE : STAR_BROWN;
+            image = new RegularShape({
+                points: 5,
+                radius: 16,
+                radius2: 10,
+                fill: new Fill({color: fill}),
+                stroke: new Stroke({color: "white", width: 2}),
+            });
+            break;
         default:
-            return stash.microtrot ? CIRCLE_PURPLE : STYLE_BROWN;
+            image = new CircleStyle({
+                radius: 10,
+                fill: new Fill({color: fill}),
+                stroke: new Stroke({color: "white", width: 2}),
+            });
     }
-}
 
-function makeCircle(fill: string): Style {
     return new Style({
-        image: new CircleStyle({
-            radius: 7,
-            fill: new Fill({color: "saddlebrown"}),
-            stroke: new Stroke({color: "white", width: 2}),
+        image: image,
+        text: new Text({
+            text: String(stash.points),
+            fill: new Fill({color: textFill}),
         }),
     });
 }
 
 export const COLOUR1 = "saddlebrown";
 export const COLOUR2 = "#fdae6c";
-
-export const STYLE_BROWN = makeCircle(COLOUR1);
-export const CIRCLE_PURPLE = makeCircle(COLOUR2);
-
-function makeStar(fill: string): Style {
-    return new Style({
-        image: new RegularShape({
-            points: 5,
-            radius: 12,
-            radius2: 6,
-            fill: new Fill({color: fill}),
-            stroke: new Stroke({color: "white", width: 2}),
-        }),
-    });
-}
-
-export const STAR_BROWN = makeStar(COLOUR1);
-export const STAR_PURPLE = makeStar(COLOUR2);

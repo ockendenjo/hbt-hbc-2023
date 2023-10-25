@@ -34,6 +34,9 @@
                     },
                     "w3w": {
                         "type": "string"
+                    },
+                    "points": {
+                        "type": "number"
                     }
                 },
                 "required": [
@@ -43,7 +46,8 @@
                     "contents",
                     "microtrot",
                     "type",
-                    "w3w"
+                    "w3w",
+                    "points"
                 ]
             }
         }

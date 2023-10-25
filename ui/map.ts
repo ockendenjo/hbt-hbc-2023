@@ -55,7 +55,17 @@ document.addEventListener("DOMContentLoaded", () => {
             const stash = properties.stash as Stash;
             const title = stash.type === "HOUSE" ? "House / flat" : "Stash";
 
-            content.innerHTML = `<b>${title}</b><p>${stash.location}</p><div class="w3w"><img src="w3w.png" height="32" width="32" alt="w3w"><a href="https://what3words.com/${stash.w3w}" target="_blank">${stash.w3w}</a></div>`;
+            let html = `<b>${title}</b><p>${stash.location}</p>`;
+            if (stash.contents?.length) {
+                html += `<p>${stash.contents}</p>`;
+            } else {
+                html += `<p class="unknown">Stash content unknown</p>`;
+            }
+            if (stash.microtrot) {
+                html += `<p>Micro-trot friendly</p>`;
+            }
+            html += `<div class="w3w"><img src="w3w.png" height="32" width="32" alt="w3w"><a href="https://what3words.com/${stash.w3w}" target="_blank">${stash.w3w}</a></div>`;
+            content.innerHTML = html;
             overlay.setPosition(e.coordinate);
         });
 
