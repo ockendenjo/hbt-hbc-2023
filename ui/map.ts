@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (stash.microtrot) {
                 html += `<p>Micro-trot friendly</p>`;
             }
-            html += `<div class="w3w"><img src="w3w.png" height="32" width="32" alt="w3w"><a href="https://what3words.com/${stash.w3w}" target="_blank">${stash.w3w}</a></div>`;
+            html += `<div class="w3w"><img src="imgs/w3w.png" height="32" width="32" alt="w3w"><a href="https://what3words.com/${stash.w3w}" target="_blank">${stash.w3w}</a></div>`;
             content.innerHTML = html;
             overlay.setPosition(e.coordinate);
         });

@@ -3,8 +3,9 @@ import {Stash} from "./types";
 import {Point} from "ol/geom";
 import {fromLonLat} from "ol/proj";
 import {Feature} from "ol";
-import {Fill, RegularShape, Stroke, Style, Text} from "ol/style";
+import {Fill, Icon, RegularShape, Stroke, Style, Text} from "ol/style";
 import CircleStyle from "ol/style/Circle";
+import ImageStyle from "ol/style/Image";
 
 export function renderStash(source: VectorSource, stash: Stash) {
     const featureConfig = {
@@ -20,22 +21,20 @@ function getStyle(stash: Stash): Style {
     const fill = stash.microtrot ? COLOUR2 : COLOUR1;
     const textFill = stash.microtrot ? "black" : "white";
 
-    let image: CircleStyle | RegularShape;
+    let image: ImageStyle;
     switch (stash.type) {
         case "HOUSE":
-            image = new RegularShape({
-                points: 5,
-                radius: 16,
-                radius2: 10,
-                fill: new Fill({color: fill}),
-                stroke: new Stroke({color: "white", width: 2}),
+            image = new Icon({
+                src: stash.microtrot ? "imgs/pumpkin_orange.png" : "imgs/pumpkin_brown.png",
+                offset: [0, 8],
+                scale: 0.5,
             });
             break;
         default:
-            image = new CircleStyle({
-                radius: 10,
-                fill: new Fill({color: fill}),
-                stroke: new Stroke({color: "white", width: 2}),
+            image = new Icon({
+                src: stash.microtrot ? "imgs/bat_orange.png" : "imgs/bat_brown.png",
+                offset: [0, 4],
+                scale: 0.5,
             });
     }
 

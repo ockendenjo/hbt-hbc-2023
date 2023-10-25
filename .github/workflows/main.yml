@@ -54,7 +54,7 @@ jobs:
         run: |
           jq -c . < ui/stashes.json > /tmp/stashes.json
           cp /tmp/stashes.json ui/dist
-          cp ui/w3w.png ui/dist
+          cp -r ui/imgs ui/dist/imgs
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
