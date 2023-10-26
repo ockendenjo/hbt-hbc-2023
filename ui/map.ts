@@ -85,6 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 storageSvc.setVisited(stash.id, visited);
                 stash.visited = visited;
                 (feature as Feature).setStyle(getStyle(stash));
+                updateScore();
             };
         });
 
@@ -97,18 +98,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     initialiseMap();
+    let stashes: Stash[];
 
     function loadData() {
         fetch("stashes.json")
             .then((r) => r.json())
             .then((j: StashesFile) => j.stashes)
-            .then((stashes) => {
+            .then((s) => {
+                stashes = s;
                 stashes.forEach((s) => {
                     s.visited = storageSvc.getVisited(s.id);
                     renderStash(vectorSource, s);
                 });
                 mapView.fit(vectorSource.getExtent(), {padding: [20, 20, 20, 20]});
+                updateScore();
             });
+    }
+
+    function updateScore(): void {
+        const score = stashes
+            .map((s) => {
+                return s.visited ? s.points : 0;
+            })
+            .reduce((a, v) => a + v, 0);
+        document.getElementById("score").textContent = String(score);
     }
 
     setupTabs();

@@ -23,6 +23,8 @@ h2 {
     min-height: 40px;
     overflow: hidden;
     background: saddlebrown;
+    display: flex;
+    flex-direction: row;
 }
 
 .nav-items {
@@ -30,6 +32,16 @@ h2 {
     max-height: 40px;
     overflow-x: auto;
     white-space: nowrap;
+    flex: 1 1 auto;
+}
+
+.score {
+    height: 40px;
+    min-height: 40px;
+    color: white;
+    font-weight: bold;
+    line-height: 40px;
+    padding: 0 20px;
 }
 
 .nav-items > div {
