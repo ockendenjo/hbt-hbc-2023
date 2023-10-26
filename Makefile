@@ -11,6 +11,9 @@ clean:
 format:
 	npx prettier --write .
 
+synth:
+	cdk synth
+
 deploy:
 	cdk deploy
 
