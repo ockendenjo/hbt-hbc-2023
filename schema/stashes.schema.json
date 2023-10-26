@@ -10,6 +10,9 @@
             "items": {
                 "type": "object",
                 "properties": {
+                    "id": {
+                        "type": "string",
+                    },
                     "lat": {
                         "type": "number"
                     },
@@ -40,6 +43,7 @@
                     }
                 },
                 "required": [
+                    "id",
                     "lat",
                     "lon",
                     "location",

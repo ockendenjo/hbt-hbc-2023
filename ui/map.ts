@@ -11,6 +11,7 @@ import VectorLayer from "ol/layer/Vector";
 import {Stash, StashesFile} from "./ts/types";
 import {renderStash} from "./ts/render";
 import {setupTabs} from "./ts/tabs";
+import {StorageService} from "./ts/StorageService";
 
 document.addEventListener("DOMContentLoaded", () => {
     const osmLayer = new TileLayer({
@@ -24,6 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const mapView = new View({maxZoom: 19});
     mapView.setCenter(fromLonLat([-3.18985, 55.95285]));
     mapView.setZoom(12);
+
+    const storageSvc = new StorageService();
 
     function initialiseMap() {
         const map = new ol.Map({
@@ -44,10 +47,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         map.on("click", function (e) {
+            let selectElem: HTMLSelectElement;
+
             const feature = map.forEachFeatureAtPixel(e.pixel, (f) => f);
             if (!feature) {
                 overlay.setPosition(undefined);
                 closer.blur();
+                if (selectElem) {
+                    selectElem.onchange = undefined;
+                }
                 return;
             }
 
@@ -55,18 +63,29 @@ document.addEventListener("DOMContentLoaded", () => {
             const stash = properties.stash as Stash;
             const title = stash.type === "HOUSE" ? "House / flat" : "Stash";
 
-            let html = `<b>${title}</b><p>${stash.location}</p>`;
+            let html = `<b>${title}</b><div>${stash.location}</div>`;
             if (stash.contents?.length) {
-                html += `<p>${stash.contents}</p>`;
+                html += `<div>${stash.contents}</div>`;
             } else {
-                html += `<p class="unknown">Stash content unknown</p>`;
+                html += `<div class="unknown">Stash content unknown</div>`;
             }
             if (stash.microtrot) {
-                html += `<p>Micro-trot friendly</p>`;
+                html += `<div>Micro-trot friendly</div>`;
             }
             html += `<div class="w3w"><img src="imgs/w3w.png" height="32" width="32" alt="w3w"><a href="https://what3words.com/${stash.w3w}" target="_blank">${stash.w3w}</a></div>`;
+
+            const isVisited = storageSvc.getVisited(stash.id);
+
+            html += `<div><select id="visit_select"><option value="0">Unvisited</option><option value="1">Visited</option></select></div>`;
             content.innerHTML = html;
             overlay.setPosition(e.coordinate);
+
+            selectElem = document.getElementById("visit_select") as HTMLSelectElement;
+            selectElem.value = isVisited ? "1" : "0";
+
+            selectElem.onchange = () => {
+                storageSvc.setVisited(stash.id, selectElem.value === "1");
+            };
         });
 
         map.addOverlay(overlay);

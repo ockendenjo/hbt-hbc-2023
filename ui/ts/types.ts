@@ -3,6 +3,7 @@ export type StashesFile = {
 };
 
 export type Stash = {
+    id: string;
     lat: number;
     lon: number;
     location: string;

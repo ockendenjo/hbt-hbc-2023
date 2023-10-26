@@ -47,3 +47,7 @@
 #popup-link:hover {
     opacity: 0.5;
 }
+
+#popup-content > div {
+    margin-top: 10px;
+}
