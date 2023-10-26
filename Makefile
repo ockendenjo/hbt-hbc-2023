@@ -11,10 +11,13 @@ clean:
 format:
 	npx prettier --write .
 
-synth:
+build:
+	go run scripts/build/main.go
+
+synth: build
 	cdk synth
 
-deploy:
+deploy: build
 	cdk deploy
 
 tsc:
