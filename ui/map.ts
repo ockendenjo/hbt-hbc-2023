@@ -1,7 +1,7 @@
 import "./map.css";
 import "./popup.css";
 import * as ol from "ol";
-import {Overlay, View} from "ol";
+import {Feature, Overlay, View} from "ol";
 import TileLayer from "ol/layer/Tile";
 import OSM from "ol/source/OSM";
 import {fromLonLat} from "ol/proj";
@@ -9,7 +9,7 @@ import {defaults as defaultControls} from "ol/control";
 import VectorSource from "ol/source/Vector";
 import VectorLayer from "ol/layer/Vector";
 import {Stash, StashesFile} from "./ts/types";
-import {renderStash} from "./ts/render";
+import {getStyle, renderStash} from "./ts/render";
 import {setupTabs} from "./ts/tabs";
 import {StorageService} from "./ts/StorageService";
 
@@ -73,18 +73,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 html += `<div>Micro-trot friendly</div>`;
             }
             html += `<div class="w3w"><img src="imgs/w3w.png" height="32" width="32" alt="w3w"><a href="https://what3words.com/${stash.w3w}" target="_blank">${stash.w3w}</a></div>`;
-
-            const isVisited = storageSvc.getVisited(stash.id);
-
             html += `<div><select id="visit_select"><option value="0">Unvisited</option><option value="1">Visited</option></select></div>`;
             content.innerHTML = html;
             overlay.setPosition(e.coordinate);
 
             selectElem = document.getElementById("visit_select") as HTMLSelectElement;
-            selectElem.value = isVisited ? "1" : "0";
+            selectElem.value = stash.visited ? "1" : "0";
 
             selectElem.onchange = () => {
-                storageSvc.setVisited(stash.id, selectElem.value === "1");
+                let visited = selectElem.value === "1";
+                storageSvc.setVisited(stash.id, visited);
+                stash.visited = visited;
+                (feature as Feature).setStyle(getStyle(stash));
             };
         });
 
@@ -103,7 +103,10 @@ document.addEventListener("DOMContentLoaded", () => {
             .then((r) => r.json())
             .then((j: StashesFile) => j.stashes)
             .then((stashes) => {
-                stashes.forEach((s) => renderStash(vectorSource, s));
+                stashes.forEach((s) => {
+                    s.visited = storageSvc.getVisited(s.id);
+                    renderStash(vectorSource, s);
+                });
                 mapView.fit(vectorSource.getExtent(), {padding: [20, 20, 20, 20]});
             });
     }
