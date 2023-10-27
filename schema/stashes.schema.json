@@ -5,6 +5,9 @@
     "location": "Data file",
     "type": "object",
     "properties": {
+        "demo": {
+            "type": "boolean"
+        },
         "stashes": {
             "type": "array",
             "items": {
@@ -23,7 +26,10 @@
                         "type": "string"
                     },
                     "contents": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "microtrot": {
                         "type": "boolean"
@@ -56,5 +62,5 @@
             }
         }
     },
-    "required": ["stashes"]
+    "required": ["stashes", "demo"]
 }

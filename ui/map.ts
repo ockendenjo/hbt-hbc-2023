@@ -14,6 +14,10 @@ import {setupTabs} from "./ts/tabs";
 import {StorageService} from "./ts/StorageService";
 
 document.addEventListener("DOMContentLoaded", () => {
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop as string),
+    });
+
     const osmLayer = new TileLayer({
         source: new OSM(),
         opacity: 0.7,
@@ -63,9 +67,16 @@ document.addEventListener("DOMContentLoaded", () => {
             const stash = properties.stash as Stash;
             const title = stash.type === "HOUSE" ? "House / flat" : "Stash";
 
-            let html = `<b>${title}</b><div>${stash.location}</div>`;
+            let html = `<b>${title}</b>`;
+            if (stash.location?.length) {
+                html += `<div>${stash.location}</div>`;
+            }
             if (stash.contents?.length) {
-                html += `<div>${stash.contents}</div>`;
+                html += `<div><ul>`;
+                stash.contents.forEach((c) => {
+                    html += `<li>${c}</li>`;
+                });
+                html += `</ul></div>`;
             } else {
                 html += `<div class="unknown">Stash content unknown</div>`;
             }
@@ -100,10 +111,23 @@ document.addEventListener("DOMContentLoaded", () => {
     initialiseMap();
     let stashes: Stash[];
 
+    function getFilename(): string {
+        const key = params["key"];
+        if (key === "5f55435a-da7f-4475-a58e-51e48369faac") {
+            return "stashes.json";
+        }
+        return Date.now() > 1698505200000 ? "stashes.json" : "demo.json";
+    }
+
     function loadData() {
-        fetch("stashes.json")
+        fetch(getFilename())
             .then((r) => r.json())
-            .then((j: StashesFile) => j.stashes)
+            .then((j: StashesFile) => {
+                if (!j.demo) {
+                    document.getElementById("demo").style.display = "none";
+                }
+                return j.stashes;
+            })
             .then((s) => {
                 stashes = s;
                 stashes.forEach((s) => {

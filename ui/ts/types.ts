@@ -1,4 +1,5 @@
 export type StashesFile = {
+    demo: boolean;
     stashes: Stash[];
 };
 
@@ -7,7 +8,7 @@ export type Stash = {
     lat: number;
     lon: number;
     location: string;
-    contents: string;
+    contents: string[];
     microtrot: boolean;
     type: StashType;
     w3w: string;
