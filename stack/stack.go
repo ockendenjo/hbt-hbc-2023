@@ -58,10 +58,7 @@ func NewStack(scope constructs.Construct, id string, props *HBTHalloweenStackPro
 	bucket.GrantReadWrite(cicdRole, jsii.String("*"))
 
 	domainNames := []string{
-		"halloween.hbt.ockenden.io",
-		"h23.hbt.ockenden.io",
-		"hbc.hbt.ockenden.io",
-		"beerienteering.hbt.ockenden.io",
+		"hbog.hbt.ockenden.io",
 	}
 
 	certArn := "arn:aws:acm:us-east-1:574363388371:certificate/cb2155dc-e84e-4fb2-8d18-5030060c98e3"
