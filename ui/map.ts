@@ -65,40 +65,58 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const properties = feature.getProperties();
             const stash = properties.stash as Stash;
-            const title = stash.type === "HOUSE" ? "House / flat" : "Stash";
+            let title: string;
+            switch (stash.type) {
+                case "HOUSE":
+                    title = "House / flat";
+                    break;
+                case "STASH":
+                    title = "Stash";
+                    break;
+                case "INFO":
+                    title = "Info";
+                    break;
+            }
 
             let html = `<b>${title}</b>`;
             if (stash.location?.length) {
                 html += `<div>${stash.location}</div>`;
             }
-            if (stash.contents?.length) {
-                html += `<div><ul>`;
-                stash.contents.forEach((c) => {
-                    html += `<li>${c}</li>`;
-                });
-                html += `</ul></div>`;
-            } else {
-                html += `<div class="unknown">Stash content unknown</div>`;
-            }
-            if (stash.microtrot) {
-                html += `<div>Micro-trot friendly</div>`;
+            if (stash.type !== "INFO") {
+                if (stash.contents?.length) {
+                    html += `<div><ul>`;
+                    stash.contents.forEach((c) => {
+                        html += `<li>${c}</li>`;
+                    });
+                    html += `</ul></div>`;
+                } else {
+                    html += `<div class="unknown">Stash content unknown</div>`;
+                }
+                if (stash.microtrot) {
+                    html += `<div>Micro-trot friendly</div>`;
+                }
             }
             html += `<div class="w3w"><img src="imgs/w3w.png" height="32" width="32" alt="w3w"><a href="w3w://show?threewords=${stash.w3w}" target="_blank">${stash.w3w} (app)</a></div>`;
             html += `<div class="w3w"><img src="imgs/w3w.png" height="32" width="32" alt="w3w"><a href="https://w3w.co/${stash.w3w}" target="_blank">${stash.w3w} (web)</a></div>`;
-            html += `<div><select id="visit_select"><option value="0">Unvisited</option><option value="1">Visited</option></select></div>`;
+
+            if (stash.type !== "INFO") {
+                html += `<div><select id="visit_select"><option value="0">Unvisited</option><option value="1">Visited</option></select></div>`;
+            }
             content.innerHTML = html;
             overlay.setPosition(e.coordinate);
 
-            selectElem = document.getElementById("visit_select") as HTMLSelectElement;
-            selectElem.value = stash.visited ? "1" : "0";
+            if (stash.type !== "INFO") {
+                selectElem = document.getElementById("visit_select") as HTMLSelectElement;
+                selectElem.value = stash.visited ? "1" : "0";
 
-            selectElem.onchange = () => {
-                let visited = selectElem.value === "1";
-                storageSvc.setVisited(stash.id, visited);
-                stash.visited = visited;
-                (feature as Feature).setStyle(getStyle(stash));
-                updateScore();
-            };
+                selectElem.onchange = () => {
+                    let visited = selectElem.value === "1";
+                    storageSvc.setVisited(stash.id, visited);
+                    stash.visited = visited;
+                    (feature as Feature).setStyle(getStyle(stash));
+                    updateScore();
+                };
+            }
         });
 
         map.addOverlay(overlay);

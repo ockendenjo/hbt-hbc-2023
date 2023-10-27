@@ -38,7 +38,8 @@
                         "type": "string",
                         "enum": [
                             "STASH",
-                            "HOUSE"
+                            "HOUSE",
+                            "INFO"
                         ]
                     },
                     "w3w": {

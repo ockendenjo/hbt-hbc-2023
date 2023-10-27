@@ -43,6 +43,28 @@
             "type": "STASH",
             "w3w": "finest.status.coins",
             "points": 0
+        },
+        {
+            "id": "7a3a0333-4bc9-4842-8291-923da3c066c6",
+            "lat": 55.94348,
+            "lon": -3.18027,
+            "location": "The Auld Hoose (finish)",
+            "contents": [],
+            "microtrot": false,
+            "type": "INFO",
+            "w3w": "sentences.track.epic",
+            "points": 0
+        },
+        {
+            "id": "715b818e-e3cf-45c0-88fc-cf29eb508e48",
+            "lat": 55.94028,
+            "lon": -3.18413,
+            "location": "DVC (start)",
+            "contents": [],
+            "microtrot": false,
+            "type": "INFO",
+            "w3w": "wrong.nurses.prep",
+            "points": 0
         }
     ]
 }

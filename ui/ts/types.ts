@@ -16,7 +16,7 @@ export type Stash = {
     visited: boolean;
 };
 
-export type StashType = "STASH" | "HOUSE";
+export type StashType = "STASH" | "HOUSE" | "INFO";
 
 export type Tab = {
     tab: HTMLElement;

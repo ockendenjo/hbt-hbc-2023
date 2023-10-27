@@ -3,8 +3,9 @@ import {Stash} from "./types";
 import {Point} from "ol/geom";
 import {fromLonLat} from "ol/proj";
 import {Feature} from "ol";
-import {Fill, Icon, Style, Text} from "ol/style";
+import {Fill, Icon, Stroke, Style, Text} from "ol/style";
 import ImageStyle from "ol/style/Image";
+import CircleStyle from "ol/style/Circle";
 
 export function renderStash(source: VectorSource, stash: Stash) {
     const featureConfig = {
@@ -28,6 +29,13 @@ export function getStyle(stash: Stash): Style {
                 scale: 0.5,
             });
             break;
+        case "INFO":
+            image = new CircleStyle({
+                radius: 8,
+                fill: new Fill({color: "cornflowerblue"}),
+                stroke: new Stroke({color: "white", width: 2}),
+            });
+            break;
         default:
             image = new Icon({
                 src: getBatSource(stash),
@@ -36,12 +44,18 @@ export function getStyle(stash: Stash): Style {
             });
     }
 
-    return new Style({
-        image: image,
-        text: new Text({
+    let text: Text;
+
+    if (stash.type !== "INFO") {
+        text = new Text({
             text: String(stash.points),
             fill: new Fill({color: textFill}),
-        }),
+        });
+    }
+
+    return new Style({
+        image: image,
+        text,
     });
 }
 
