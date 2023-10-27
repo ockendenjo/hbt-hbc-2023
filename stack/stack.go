@@ -72,7 +72,7 @@ func NewStack(scope constructs.Construct, id string, props *HBTHalloweenStackPro
 			CachePolicy:          awscloudfront.CachePolicy_CACHING_OPTIMIZED(),
 		},
 		AdditionalBehaviors: &map[string]*awscloudfront.BehaviorOptions{
-			"stashes.json": &noCacheBehaviour,
+			"live.json": &noCacheBehaviour,
 		},
 		PriceClass:  awscloudfront.PriceClass_PRICE_CLASS_100,
 		HttpVersion: awscloudfront.HttpVersion_HTTP2_AND_3,

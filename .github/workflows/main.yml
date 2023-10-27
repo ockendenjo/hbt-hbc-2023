@@ -20,7 +20,7 @@ jobs:
 
       - name: Validate JSON
         run: |
-          ./yajsv.linux.amd64 -s schema/stashes.schema.json ui/stashes.json
+          ./yajsv.linux.amd64 -s schema/stashes.schema.json ui/live.json
           ./yajsv.linux.amd64 -s schema/stashes.schema.json ui/demo.json
 
   test:
@@ -53,8 +53,10 @@ jobs:
 
       - name: Copy JSON files
         run: |
-          jq -c . < ui/stashes.json > /tmp/stashes.json
-          cp /tmp/stashes.json ui/dist
+          jq -c . < ui/live.json > /tmp/live.json
+          cp /tmp/live.json ui/dist
+          jq -c . < ui/demo.json > /tmp/demo.json
+          cp /tmp/demo.json ui/dist
           cp -r ui/imgs ui/dist/imgs
 
       - name: Upload artifact

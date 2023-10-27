@@ -114,9 +114,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function getFilename(): string {
         const key = params["key"];
         if (key === "5f55435a-da7f-4475-a58e-51e48369faac") {
-            return "stashes.json";
+            return "live.json";
         }
-        return Date.now() > 1698505200000 ? "stashes.json" : "demo.json";
+        return Date.now() > 1698505200000 ? "live.json" : "demo.json";
     }
 
     function loadData() {
