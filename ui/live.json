@@ -5,15 +5,43 @@
             "id": "ad0615d7-873f-402c-afc6-128e4edbda14",
             "lat": 55.93356,
             "lon": -3.18148,
-            "location": "18 Dalrymple Cresent",
+            "location": "18 Dalrymple Crescent - near garage",
             "contents": [
                 "4 beers",
                 "4 AF-beers",
-                "Bag marshmallows"
+                "Marshmallows"
             ],
             "microtrot": true,
             "type": "STASH",
             "w3w": "angel.gown.hook",
+            "points": 0
+        },
+        {
+            "id": "11c2bfe7-bf1c-475a-ac02-9f138995fe4e",
+            "lat": 55.94841,
+            "lon": -3.18439,
+            "location": "Underneath the big blue map sign",
+            "contents": [
+                "Drinks",
+                "Snacks"
+            ],
+            "microtrot": true,
+            "type": "STASH",
+            "w3w": "torn.hips.follow",
+            "points": 0
+        },
+        {
+            "id": "5f229f97-cc5d-4598-b194-202bcdcf962f",
+            "lat": 55.93330,
+            "lon": -3.18835,
+            "location": "38a Dick Place. In the garden - accessed via path to left of the house",
+            "contents": [
+                "Ginger beer",
+                "Beer",
+                "Sweets"
+            ], "microtrot": true,
+            "type": "STASH",
+            "w3w": "finest.status.coins",
             "points": 0
         }
     ]
