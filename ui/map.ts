@@ -100,19 +100,25 @@ document.addEventListener("DOMContentLoaded", () => {
             html += `<div class="w3w"><img src="imgs/w3w.png" height="32" width="32" alt="w3w"><a href="https://w3w.co/${stash.w3w}" target="_blank">${stash.w3w} (web)</a></div>`;
 
             if (stash.type !== "INFO") {
-                html += `<div><select id="visit_select"><option value="0">Unvisited</option><option value="1">Visited</option></select></div>`;
+                html += `<div>`;
+                html += `<select id="visit_select"><option value="0">Unvisited</option><option value="1">Visited: no bonus</option>`;
+                for (let i = 1; i < 11; i++) {
+                    html += `<option value="${i + 1}">Visited: bonus +${i}</option>`;
+                }
+                html += `</div>`;
             }
             content.innerHTML = html;
             overlay.setPosition(e.coordinate);
 
             if (stash.type !== "INFO") {
                 selectElem = document.getElementById("visit_select") as HTMLSelectElement;
-                selectElem.value = stash.visited ? "1" : "0";
+                const points = storageSvc.getVisited(stash.id);
+                selectElem.value = String(points);
 
                 selectElem.onchange = () => {
-                    let visited = selectElem.value === "1";
+                    let visited = Number(selectElem.value);
                     storageSvc.setVisited(stash.id, visited);
-                    stash.visited = visited;
+                    stash.visited = visited > 0;
                     (feature as Feature).setStyle(getStyle(stash));
                     updateScore();
                 };
@@ -150,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .then((s) => {
                 stashes = s;
                 stashes.forEach((s) => {
-                    s.visited = storageSvc.getVisited(s.id);
+                    s.visited = storageSvc.getVisited(s.id) > 0;
                     renderStash(vectorSource, s);
                 });
                 mapView.fit(vectorSource.getExtent(), {padding: [20, 20, 20, 20]});
@@ -161,7 +167,10 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateScore(): void {
         const score = stashes
             .map((s) => {
-                return s.visited ? s.points : 0;
+                if (!s.visited) {
+                    return 0;
+                }
+                return s.points + Math.max(0, storageSvc.getVisited(s.id) - 1);
             })
             .reduce((a, v) => a + v, 0);
         document.getElementById("score").textContent = String(score);
