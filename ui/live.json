@@ -279,6 +279,17 @@
             "type": "STASH",
             "w3w": "punch.memory.tribal",
             "points": 0
+        },
+        {
+            "id": "ff35e9fc-a978-4273-95d6-5edb6f8768de",
+            "lat": 55.939723,
+            "lon": -3.214668,
+            "location": "7 Horne Terrace. Ring at flat 9 (building 7) and Flo should come down.",
+            "contents": ["Surprise!"],
+            "microtrot": true,
+            "type": "HOUSE",
+            "w3w": "retail.lasted.moving",
+            "points": 0
         }
     ]
 }
