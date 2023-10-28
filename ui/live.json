@@ -39,7 +39,8 @@
                 "Ginger beer",
                 "Beer",
                 "Sweets"
-            ], "microtrot": true,
+            ],
+            "microtrot": true,
             "type": "STASH",
             "w3w": "finest.status.coins",
             "points": 0
@@ -64,6 +65,150 @@
             "microtrot": false,
             "type": "INFO",
             "w3w": "wrong.nurses.prep",
+            "points": 0
+        },
+        {
+            "id": "92209662-9d0c-4835-8079-74d5feda1296",
+            "lat": 55.940182,
+            "lon": -3.163801,
+            "location": "Beside 2 metal poles, base of 1m crag",
+            "contents": [
+                "2 beers",
+                "Jelly babies"
+            ],
+            "microtrot": true,
+            "type": "STASH",
+            "w3w": "veal.alien.noses",
+            "points": 0
+        },
+        {
+            "id": "3a85fad1-efd2-4e93-9744-cb93e259f620",
+            "lat": 55.926194,
+            "lon": -3.210862,
+            "location": "Grit bin",
+            "contents": [
+                "4 tins",
+                "Strawberry laces"
+            ],
+            "microtrot": true,
+            "type": "STASH",
+            "w3w": "bubble.crest.rocks",
+            "points": 0
+        },
+        {
+            "id": "fc1b7643-aeda-436e-93c9-af7f1ca87d3c",
+            "lat": 55.950881,
+            "lon": -3.161296,
+            "location": "",
+            "contents": [
+                "4 beers",
+                "Sweets"
+            ],
+            "microtrot": true,
+            "type": "STASH",
+            "w3w": "doors.cone.trendy",
+            "points": 0
+        },
+        {
+            "id": "53428f99-cbf3-476a-8679-33a19bf9edd9",
+            "lat": 55.951825,
+            "lon": -3.162693,
+            "location": "Tesco bag",
+            "contents": [
+                "3 Irn Bru",
+                "2 Cider",
+                "1 Ale"
+            ],
+            "microtrot": true,
+            "type": "STASH",
+            "w3w": "same.rate.online",
+            "points": 0
+        },
+        {
+            "id": "6c5e851d-ae0b-484e-9958-2979e2827608",
+            "lat": 55.948752,
+            "lon": -3.183117,
+            "location": "Stashed between my two veg planters, with further instructions!. Can be entered via hugs.ducks.noting (Drummond St) or origin.bumpy.pipes (Infirmary st).",
+            "contents": [
+                "20 vegan trick or sweets"
+            ],
+            "microtrot": true,
+            "type": "STASH",
+            "w3w": "moth.fence.atoms",
+            "points": 0
+        },
+        {
+            "id": "31bd827c-d510-481c-905a-5cf2d5af396e",
+            "lat": 55.945788,
+            "lon": -3.165583,
+            "location": "Under tree",
+            "contents": [
+                "Sweets",
+                "Pumpkin",
+                "1 cider",
+                "3 ale",
+                "4 irn bru"
+            ],
+            "microtrot": true,
+            "type": "STASH",
+            "w3w": "vouch.wipes.honey",
+            "points": 0
+        },
+        {
+            "id": "b2dceeaf-f9ba-4ec9-9b21-8755fcfa2f1d",
+            "lat": 55.93781,
+            "lon": -3.194774,
+            "location": "",
+            "contents": [
+                "Beer!!!"
+            ],
+            "microtrot": false,
+            "type": "STASH",
+            "w3w": "merit.dating.reduce",
+            "points": 0
+        },
+        {
+            "id": "b675bb53-9ac9-4252-a19f-3e54f9883daf",
+            "lat": 55.944521,
+            "lon": -3.152673,
+            "location": "",
+            "contents": [
+                "Sweets",
+                "3 irn bru",
+                "2 ale"
+            ],
+            "microtrot": true,
+            "type": "STASH",
+            "w3w": "bake.will.chase",
+            "points": 0
+        },
+        {
+            "id": "c63ed78f-0953-4180-b8da-d87ef3600b8b",
+            "lat": 55.947243,
+            "lon": -3.176517,
+            "location": "Hidden in the grass under the footpath closed sign",
+            "contents": [
+                "2 beers",
+                "1 cider",
+                "Halloween chocolates"
+            ],
+            "microtrot": true,
+            "type": "STASH",
+            "w3w": "fixed.fortunate.films",
+            "points": 0
+        },
+        {
+            "id": "bc15b4f3-7d01-4746-8273-1cb451882411",
+            "lat": 55.95084,
+            "lon": -3.17357,
+            "location": "Tucked under the concrete lip (edge of concrete path) by the drain",
+            "contents": [
+                "2 beers",
+                "1 cider"
+            ],
+            "microtrot": false,
+            "type": "STASH",
+            "w3w": "human.snow.bets",
             "points": 0
         }
     ]
