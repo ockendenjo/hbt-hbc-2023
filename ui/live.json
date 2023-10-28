@@ -276,8 +276,8 @@
         },
         {
             "id": "1f09a634-b60b-4225-91f6-3f97289dcc98",
-            "lat": 55.942473,
-            "lon": -3.174591,
+            "lat": 55.943712,
+            "lon": -3.177288,
             "location": "",
             "contents": [
                 "Alcoholic beverages",
@@ -285,7 +285,7 @@
             ],
             "microtrot": true,
             "type": "STASH",
-            "w3w": "punch.memory.tribal",
+            "w3w": "belong.sooner.whips",
             "points": 2
         },
         {
