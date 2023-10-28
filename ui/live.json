@@ -97,8 +97,8 @@
         },
         {
             "id": "fc1b7643-aeda-436e-93c9-af7f1ca87d3c",
-            "lat": 55.950881,
-            "lon": -3.161296,
+            "lat": 55.9508,
+            "lon": -3.161103,
             "location": "",
             "contents": [
                 "4 beers",
@@ -106,7 +106,7 @@
             ],
             "microtrot": true,
             "type": "STASH",
-            "w3w": "doors.cone.trendy",
+            "w3w": "slower.hiding.soft",
             "points": 0
         },
         {
@@ -201,7 +201,7 @@
             "id": "bc15b4f3-7d01-4746-8273-1cb451882411",
             "lat": 55.95084,
             "lon": -3.17357,
-            "location": "Tucked under the concrete lip (edge of concrete path) by the drain",
+            "location": "Tucked under the concrete lip (edge of concrete area) by the drain",
             "contents": [
                 "2 beers",
                 "1 cider"
@@ -209,6 +209,75 @@
             "microtrot": false,
             "type": "STASH",
             "w3w": "human.snow.bets",
+            "points": 0
+        },
+        {
+            "id": "146759d9-604f-4aec-944d-829f1d7b34d4",
+            "lat": 55.95328,
+            "lon": -3.16091,
+            "location": "In a rowan tree opposite St Margaret's loch",
+            "contents": [
+                "4 cider",
+                "7 chocolates"
+            ],
+            "microtrot": true,
+            "type": "STASH",
+            "w3w": "liked.salad.robe",
+            "points": 0
+        },
+        {
+            "id": "61777c5b-8375-4a38-b7fe-cdc31eb46c7d",
+            "lat": 55.949642,
+            "lon": -3.186922,
+            "location": "",
+            "contents": ["2 Irn Bru", "8 Everyone's favorite drink"],
+            "microtrot": true,
+            "type": "STASH",
+            "w3w": "plenty.moving.insert",
+            "points": 0
+        },
+        {
+            "id": "5b9b5822-2b9f-414c-b6ed-57ee3e92e2cc",
+            "lat": 55.946973,
+            "lon": -3.17671,
+            "location": "In a tesco bag, hidden behind a bush",
+            "contents": ["4 beers", "Sweets"],
+            "microtrot": true,
+            "type": "STASH",
+            "w3w": "ladder.pulled.cafe",
+            "points": 0
+        },
+        {
+            "id": "015899fa-3676-47d4-b62d-6a7eb65bb553",
+            "lat": 55.947701,
+            "lon": -3.177625,
+            "location": "Hole in hedge on side facing the park",
+            "contents": ["3 beers"],
+            "microtrot": false,
+            "type": "STASH",
+            "w3w": "hung.debate.behind",
+            "points": 0
+        },
+        {
+            "id": "9428a31e-5ea8-4888-96f9-18d64b153747",
+            "lat": 55.925709,
+            "lon": -3.192702,
+            "location": "Behind a log under a tree near the end of the stone wall",
+            "contents": ["3 beers"],
+            "microtrot": false,
+            "type": "STASH",
+            "w3w": "marble.then.weep",
+            "points": 0
+        },
+        {
+            "id": "1f09a634-b60b-4225-91f6-3f97289dcc98",
+            "lat": 55.942473,
+            "lon": -3.174591,
+            "location": "",
+            "contents": ["Beer", "Cider", "Sweets"],
+            "microtrot": true,
+            "type": "STASH",
+            "w3w": "punch.memory.tribal",
             "points": 0
         }
     ]
