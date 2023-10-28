@@ -7,14 +7,14 @@
             "lon": -3.18148,
             "location": "18 Dalrymple Crescent - near garage",
             "contents": [
-                "4 beers",
-                "4 AF-beers",
-                "Marshmallows"
+                "Alcoholic beverages",
+                "Non-alcoholic beverages",
+                "Confectionary"
             ],
             "microtrot": true,
             "type": "STASH",
             "w3w": "angel.gown.hook",
-            "points": 0
+            "points": 3
         },
         {
             "id": "11c2bfe7-bf1c-475a-ac02-9f138995fe4e",
@@ -28,22 +28,22 @@
             "microtrot": true,
             "type": "STASH",
             "w3w": "torn.hips.follow",
-            "points": 0
+            "points": 2
         },
         {
             "id": "5f229f97-cc5d-4598-b194-202bcdcf962f",
             "lat": 55.93330,
             "lon": -3.18835,
-            "location": "38a Dick Place. In the garden - accessed via path to left of the house",
+            "location": "38A Dick Place. In the garden - accessed via path to left of the house",
             "contents": [
-                "Ginger beer",
-                "Beer",
-                "Sweets"
+                "Alcoholic beverages",
+                "Non-alcoholic beverages",
+                "Confectionary"
             ],
             "microtrot": true,
             "type": "STASH",
             "w3w": "finest.status.coins",
-            "points": 0
+            "points": 3
         },
         {
             "id": "7a3a0333-4bc9-4842-8291-923da3c066c6",
@@ -54,7 +54,7 @@
             "microtrot": false,
             "type": "INFO",
             "w3w": "sentences.track.epic",
-            "points": 0
+            "points": 1
         },
         {
             "id": "715b818e-e3cf-45c0-88fc-cf29eb508e48",
@@ -65,7 +65,7 @@
             "microtrot": false,
             "type": "INFO",
             "w3w": "wrong.nurses.prep",
-            "points": 0
+            "points": 1
         },
         {
             "id": "92209662-9d0c-4835-8079-74d5feda1296",
@@ -73,13 +73,13 @@
             "lon": -3.163801,
             "location": "Beside 2 metal poles, base of 1m crag",
             "contents": [
-                "2 beers",
-                "Jelly babies"
+                "Alcoholic beverages",
+                "Confectionary"
             ],
             "microtrot": true,
             "type": "STASH",
             "w3w": "veal.alien.noses",
-            "points": 0
+            "points": 5
         },
         {
             "id": "3a85fad1-efd2-4e93-9744-cb93e259f620",
@@ -87,13 +87,13 @@
             "lon": -3.210862,
             "location": "Grit bin",
             "contents": [
-                "4 tins",
-                "Strawberry laces"
+                "Alcoholic beverages",
+                "Confectionary"
             ],
             "microtrot": true,
             "type": "STASH",
             "w3w": "bubble.crest.rocks",
-            "points": 0
+            "points": 10
         },
         {
             "id": "fc1b7643-aeda-436e-93c9-af7f1ca87d3c",
@@ -101,13 +101,13 @@
             "lon": -3.161103,
             "location": "",
             "contents": [
-                "4 beers",
-                "Sweets"
+                "Alcoholic beverages",
+                "Confectionary"
             ],
             "microtrot": true,
             "type": "STASH",
             "w3w": "slower.hiding.soft",
-            "points": 0
+            "points": 3
         },
         {
             "id": "53428f99-cbf3-476a-8679-33a19bf9edd9",
@@ -115,14 +115,13 @@
             "lon": -3.162693,
             "location": "Tesco bag",
             "contents": [
-                "3 Irn Bru",
-                "2 Cider",
-                "1 Ale"
+                "Alcoholic beverages",
+                "Non-alcoholic beverages"
             ],
             "microtrot": true,
             "type": "STASH",
             "w3w": "same.rate.online",
-            "points": 0
+            "points": 3
         },
         {
             "id": "6c5e851d-ae0b-484e-9958-2979e2827608",
@@ -130,12 +129,12 @@
             "lon": -3.183117,
             "location": "Stashed between my two veg planters, with further instructions!. Can be entered via hugs.ducks.noting (Drummond St) or origin.bumpy.pipes (Infirmary st).",
             "contents": [
-                "20 vegan trick or sweets"
+                "Vegan confectionary"
             ],
             "microtrot": true,
             "type": "STASH",
             "w3w": "moth.fence.atoms",
-            "points": 0
+            "points": 2
         },
         {
             "id": "31bd827c-d510-481c-905a-5cf2d5af396e",
@@ -143,16 +142,14 @@
             "lon": -3.165583,
             "location": "Under tree",
             "contents": [
-                "Sweets",
-                "Pumpkin",
-                "1 cider",
-                "3 ale",
-                "4 irn bru"
+                "Alcoholic beverages",
+                "Non-alcoholic beverages",
+                "Confectionary"
             ],
             "microtrot": true,
             "type": "STASH",
             "w3w": "vouch.wipes.honey",
-            "points": 0
+            "points": 4
         },
         {
             "id": "b2dceeaf-f9ba-4ec9-9b21-8755fcfa2f1d",
@@ -160,12 +157,12 @@
             "lon": -3.194774,
             "location": "",
             "contents": [
-                "Beer!!!"
+                "Alcoholic beverages"
             ],
             "microtrot": false,
             "type": "STASH",
             "w3w": "merit.dating.reduce",
-            "points": 0
+            "points": 2
         },
         {
             "id": "b675bb53-9ac9-4252-a19f-3e54f9883daf",
@@ -173,14 +170,14 @@
             "lon": -3.152673,
             "location": "",
             "contents": [
-                "Sweets",
-                "3 irn bru",
-                "2 ale"
+                "Alcoholic beverages",
+                "Non-alcoholic beverages",
+                "Confectionary"
             ],
             "microtrot": true,
             "type": "STASH",
             "w3w": "bake.will.chase",
-            "points": 0
+            "points": 6
         },
         {
             "id": "c63ed78f-0953-4180-b8da-d87ef3600b8b",
@@ -188,14 +185,13 @@
             "lon": -3.176517,
             "location": "Hidden in the grass under the footpath closed sign",
             "contents": [
-                "2 beers",
-                "1 cider",
-                "Halloween chocolates"
+                "Alcoholic beverages",
+                "Confectionary"
             ],
             "microtrot": true,
             "type": "STASH",
             "w3w": "fixed.fortunate.films",
-            "points": 0
+            "points": 2
         },
         {
             "id": "bc15b4f3-7d01-4746-8273-1cb451882411",
@@ -203,13 +199,12 @@
             "lon": -3.17357,
             "location": "Tucked under the concrete lip (edge of concrete area) by the drain",
             "contents": [
-                "2 beers",
-                "1 cider"
+                "Alcoholic beverages"
             ],
             "microtrot": false,
             "type": "STASH",
             "w3w": "human.snow.bets",
-            "points": 0
+            "points": 2
         },
         {
             "id": "146759d9-604f-4aec-944d-829f1d7b34d4",
@@ -217,79 +212,209 @@
             "lon": -3.16091,
             "location": "In a rowan tree opposite St Margaret's loch",
             "contents": [
-                "4 cider",
-                "7 chocolates"
+                "Alcoholic beverages",
+                "Confectionary"
             ],
             "microtrot": true,
             "type": "STASH",
             "w3w": "liked.salad.robe",
-            "points": 0
+            "points": 3
         },
         {
             "id": "61777c5b-8375-4a38-b7fe-cdc31eb46c7d",
             "lat": 55.949642,
             "lon": -3.186922,
             "location": "",
-            "contents": ["2 Irn Bru", "8 Everyone's favorite drink"],
+            "contents": [
+                "Alcoholic beverages",
+                "Non-alcoholic beverages"
+            ],
             "microtrot": true,
             "type": "STASH",
             "w3w": "plenty.moving.insert",
-            "points": 0
+            "points": 4
         },
         {
             "id": "5b9b5822-2b9f-414c-b6ed-57ee3e92e2cc",
             "lat": 55.946973,
             "lon": -3.17671,
             "location": "In a tesco bag, hidden behind a bush",
-            "contents": ["4 beers", "Sweets"],
+            "contents": [
+                "Alcoholic beverages",
+                "Confectionary"
+            ],
             "microtrot": true,
             "type": "STASH",
             "w3w": "ladder.pulled.cafe",
-            "points": 0
+            "points": 2
         },
         {
             "id": "015899fa-3676-47d4-b62d-6a7eb65bb553",
             "lat": 55.947701,
             "lon": -3.177625,
             "location": "Hole in hedge on side facing the park",
-            "contents": ["3 beers"],
+            "contents": [
+                "Alcoholic beverages"
+            ],
             "microtrot": false,
             "type": "STASH",
             "w3w": "hung.debate.behind",
-            "points": 0
+            "points": 2
         },
         {
             "id": "9428a31e-5ea8-4888-96f9-18d64b153747",
             "lat": 55.925709,
             "lon": -3.192702,
             "location": "Behind a log under a tree near the end of the stone wall",
-            "contents": ["3 beers"],
+            "contents": [
+                "Alcoholic beverages"
+            ],
             "microtrot": false,
             "type": "STASH",
             "w3w": "marble.then.weep",
-            "points": 0
+            "points": 8
         },
         {
             "id": "1f09a634-b60b-4225-91f6-3f97289dcc98",
             "lat": 55.942473,
             "lon": -3.174591,
             "location": "",
-            "contents": ["Beer", "Cider", "Sweets"],
+            "contents": [
+                "Alcoholic beverages",
+                "Confectionary"
+            ],
             "microtrot": true,
             "type": "STASH",
             "w3w": "punch.memory.tribal",
-            "points": 0
+            "points": 2
         },
         {
             "id": "ff35e9fc-a978-4273-95d6-5edb6f8768de",
             "lat": 55.939723,
             "lon": -3.214668,
             "location": "7 Horne Terrace. Ring at flat 9 (building 7) and Flo should come down.",
-            "contents": ["Surprise!"],
-            "microtrot": true,
+            "contents": [
+                "Surprise!"
+            ],
+            "microtrot": false,
             "type": "HOUSE",
             "w3w": "retail.lasted.moving",
-            "points": 0
+            "points": 8
+        },
+        {
+            "id": "bb1da00a-8fdf-412e-beb0-c95ee1c93b38",
+            "lat": 55.941987,
+            "lon": -3.199591,
+            "location": "Under a christmassy tree",
+            "contents": [
+                "Non-alcoholic beverages",
+                "Confectionary"
+            ],
+            "microtrot": true,
+            "type": "STASH",
+            "w3w": "frog.tester.clocks",
+            "points": 2
+        },
+        {
+            "id": "25ad460c-acf4-4a91-9e7c-96cf374f3d02",
+            "lat": 55.94757,
+            "lon": -3.19805,
+            "location": "Tucked against wall",
+            "contents": [
+                "Alcoholic beverages",
+                "Non-alcoholic beverages",
+                "Confectionary"
+            ],
+            "microtrot": true,
+            "type": "STASH",
+            "w3w": "feast.leaps.coffee",
+            "points": 3
+        },
+        {
+            "id": "f3f80999-761b-443f-bc42-5c5ee1499ebf",
+            "lat": 55.94727,
+            "lon": -3.201614,
+            "location": "By metal railings",
+            "contents": [
+                "Alcoholic beverages",
+                "Non-alcoholic beverages",
+                "Confectionary"
+            ],
+            "microtrot": true,
+            "type": "STASH",
+            "w3w": "loved.cowboy.poetic",
+            "points": 3
+        },
+        {
+            "id": "97ea715f-fc7f-41af-b779-50291f739019",
+            "lat": 55.938699,
+            "lon": -3.201566,
+            "location": "In bush to the right of black door in wall",
+            "contents": [
+                "Alcoholic beverages",
+                "Non-alcoholic beverages",
+                "Confectionary"
+            ],
+            "microtrot": true,
+            "type": "STASH",
+            "w3w": "groups.swear.labels",
+            "points": 2
+        },
+        {
+            "id": "934b4e83-37f3-4c49-b886-85ccdd103365",
+            "lat": 55.946515,
+            "lon": -3.20012,
+            "location": "Up some stairs next to a car-park and then by a wall. Access this one from the north.",
+            "contents": [
+                "Alcoholic beverages",
+                "Non-alcoholic beverages",
+                "Confectionary"
+            ],
+            "microtrot": true,
+            "type": "STASH",
+            "w3w": "staple.pure.gent",
+            "points": 3
+        },
+        {
+            "id": "33ad3c48-2fe4-4b2f-9cd6-6c3c348d7682",
+            "lat": 55.939508,
+            "lon": -3.19039,
+            "location": "In bush behind tree, by wall",
+            "contents": [
+                "Alcoholic beverages",
+                "Non-alcoholic beverages",
+                "Confectionary"
+            ],
+            "microtrot": true,
+            "type": "STASH",
+            "w3w": "cuts.allow.fits",
+            "points": 1
+        },
+        {
+            "id": "2dd48984-4549-44f4-9553-b5f88d9b2766",
+            "lat": 55.93298,
+            "lon": -3.18445,
+            "location": "Grit bin at end of Dalrymple Crescent",
+            "contents": [
+                "Alcoholic beverages"
+            ],
+            "microtrot": false,
+            "type": "STASH",
+            "w3w": "jars.locker.body",
+            "points": 3
+        },
+        {
+            "id": "1e41c6a5-3d90-4f1b-b8d9-1708ff61597a",
+            "lat": 55.93108,
+            "lon": -3.20001,
+            "location": "West side of tree outside and west of the gates to the Astlie Ainsley hospital",
+            "contents": [
+                "Alcoholic beverages"
+            ],
+            "microtrot": false,
+            "type": "STASH",
+            "w3w": "twig.gasp.vent",
+            "points": 6
         }
     ]
 }

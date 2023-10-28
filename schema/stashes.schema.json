@@ -47,7 +47,8 @@
                         "type": "string"
                     },
                     "points": {
-                        "type": "number"
+                        "type": "number",
+                        "minimum": 1
                     }
                 },
                 "required": [
