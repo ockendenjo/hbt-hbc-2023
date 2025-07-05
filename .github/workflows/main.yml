@@ -85,8 +85,8 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          role-to-assume: arn:aws:iam::574363388371:role/HBTHalloweenChallengeCICDRole
+          role-to-assume: arn:aws:iam::574363388371:role/BeerienteeringCICDRole
           aws-region: eu-west-1
 
       - name: S3 Sync
-        run: aws s3 sync ./ui/dist s3://halloween2023.hbt.ockenden.io
+        run: aws s3 sync ./ui/dist s3://hbt-beerienteering-qgdmb3unjy
