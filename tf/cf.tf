@@ -21,7 +21,6 @@ resource "aws_cloudfront_distribution" "cf_distribution" {
 
     s3_origin_config {
       origin_access_identity = aws_cloudfront_origin_access_identity.main.cloudfront_access_identity_path
-      # origin_access_control_id = aws_cloudfront_origin_access_control.oac.id
     }
   }
 
@@ -66,11 +65,4 @@ data "aws_cloudfront_cache_policy" "caching_disabled" {
 
 resource "aws_cloudfront_origin_access_identity" "main" {
   comment = "S3"
-}
-
-resource "aws_cloudfront_origin_access_control" "oac" {
-  name                              = "my-oac"
-  origin_access_control_origin_type = "s3"
-  signing_behavior                  = "always"
-  signing_protocol                  = "sigv4"
 }
