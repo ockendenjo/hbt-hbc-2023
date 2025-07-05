@@ -9,9 +9,10 @@ import {defaults as defaultControls} from "ol/control";
 import VectorSource from "ol/source/Vector";
 import VectorLayer from "ol/layer/Vector";
 import {Stash, StashesFile} from "./ts/types";
-import {getStyle, renderStash} from "./ts/render";
+import {renderStash} from "./ts/render";
 import {setupTabs} from "./ts/tabs";
 import {StorageService} from "./ts/StorageService";
+import {getBeerienteeringStyle} from "./ts/style_beerienteering";
 
 document.addEventListener("DOMContentLoaded", () => {
     const params = new Proxy(new URLSearchParams(window.location.search), {
@@ -119,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     let visited = Number(selectElem.value);
                     storageSvc.setVisited(stash.id, visited);
                     stash.visited = visited > 0;
-                    (feature as Feature).setStyle(getStyle(stash));
+                    (feature as Feature).setStyle(getBeerienteeringStyle(stash));
                     updateScore();
                 };
             }
