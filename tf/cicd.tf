@@ -43,6 +43,27 @@ resource "aws_iam_role_policy" "cloudfront_invalidate" {
   })
 }
 
+resource "aws_iam_role_policy" "s3" {
+  name = "AllowS3"
+  role = aws_iam_role.cicd.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Action = [
+          "s3:*",
+        ]
+        Resource = [
+          aws_s3_bucket.backend.arn,
+          "${aws_s3_bucket.backend.arn}/*",
+        ]
+      }
+    ]
+  })
+}
+
 output "cicd_role" {
   value = aws_iam_role.cicd.arn
 }
