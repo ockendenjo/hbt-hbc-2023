@@ -1,17 +1,17 @@
 {
-    "name": "src2",
-    "version": "1.0.0",
-    "scripts": {
-        "start": "vite --host",
-        "build": "vite build",
-        "serve": "vite preview"
-    },
-    "devDependencies": {
-        "vite": "6.3.4",
-        "prettier": "^3.6.2"
-    },
-    "dependencies": {
-        "d3-scale-chromatic": "^3.0.0",
-        "ol": "latest"
-    }
+  "name": "src2",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "vite --host",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "6.3.4",
+    "prettier": "^3.6.2"
+  },
+  "dependencies": {
+    "d3-scale-chromatic": "^3.0.0",
+    "ol": "latest"
+  }
 }

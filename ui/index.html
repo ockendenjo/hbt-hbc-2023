@@ -1,61 +1,79 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="icon" type="image/x-icon" href="imgs/jb_pump.png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>HBT Beerienteering</title>
-    </head>
-    <body>
-        <div class="demo-mode" id="demo">Demo mode</div>
-        <div class="nav">
-            <div class="nav-items">
-                <div id="select-map" class="active">Map</div>
-                <div id="select-info">Instructions</div>
-            </div>
-            <div class="score" id="score">0</div>
-        </div>
-        <div id="tab-map" class="tab" style="display: none">
-            <div id="map"></div>
-            <div id="popup" class="ol-popup">
-                <a href="#" id="popup-closer" class="ol-popup-closer"></a>
-                <div id="popup-content"></div>
-            </div>
-        </div>
-        <div id="tab-info" class="tab" style="display: none">
-            <div class="tab-scroll padded">
-                <h1>Instructions</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="imgs/jb_pump.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HBT Beerienteering</title>
+  </head>
+  <body>
+    <div class="demo-mode" id="demo">Demo mode</div>
+    <div class="nav">
+      <div class="nav-items">
+        <div id="select-map" class="active">Map</div>
+        <div id="select-info">Instructions</div>
+      </div>
+      <div class="score" id="score">0</div>
+    </div>
+    <div id="tab-map" class="tab" style="display: none">
+      <div id="map"></div>
+      <div id="popup" class="ol-popup">
+        <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+        <div id="popup-content"></div>
+      </div>
+    </div>
+    <div id="tab-info" class="tab" style="display: none">
+      <div class="tab-scroll padded">
+        <h1>Instructions</h1>
 
-                <ul>
-                    <li>Get into a pair/team. Scoring is per team rather than individual.</li>
-                    <li>You get points for visiting each stash. The number of points is stated on the icon.</li>
-                    <li>Stashes cannot be visited by the same team more than once.</li>
-                    <li>
-                        Keep track of your team’s score - this can be done on the app by selecting 'visited' on the
-                        drop-down menu. You can also keep track of your bonus points this way! Your score will be shown
-                        in the top right corner.
-                    </li>
-                    <li>If something in the stash has further instructions, you must follow them.</li>
-                    <li>
-                        There are limited supplies at each stash, so you may arrive to find nothing left. Get in there
-                        quickly!
-                    </li>
-                    <li>You must be back at Bellfield Brewery by 20:30. You lose a point for every minute you are late.</li>
-                </ul>
+        <ul>
+          <li>
+            Get into a pair/team. Scoring is per team rather than individual.
+          </li>
+          <li>
+            You get points for visiting each stash. The number of points is
+            stated on the icon.
+          </li>
+          <li>Stashes cannot be visited by the same team more than once.</li>
+          <li>
+            Keep track of your team’s score - this can be done on the app by
+            selecting 'visited' on the drop-down menu. You can also keep track
+            of your bonus points this way! Your score will be shown in the top
+            right corner.
+          </li>
+          <li>
+            If something in the stash has further instructions, you must follow
+            them.
+          </li>
+          <li>
+            There are limited supplies at each stash, so you may arrive to find
+            nothing left. Get in there quickly!
+          </li>
+          <li>
+            You must be back at Bellfield Brewery by 20:30. You lose a point for
+            every minute you are late.
+          </li>
+        </ul>
 
-                <h1>Bonus points</h1>
+        <h1>Bonus points</h1>
 
-                <ul>
-                    <li>2 points for each beverage drunk at the stop (max 1 beverage per person).</li>
-                    <li>Beverages must be drunk on location, but confectionary can be taken away.</li>
-                </ul>
+        <ul>
+          <li>
+            2 points for each beverage drunk at the stop (max 1 beverage per
+            person).
+          </li>
+          <li>
+            Beverages must be drunk on location, but confectionary can be taken
+            away.
+          </li>
+        </ul>
 
-                <h1>Map notes</h1>
-                <p>Brown - stash</p>
-                <p>Blue circle - start/finish locations</p>
-                <p>Green - you've marked it as visited</p>
-            </div>
-        </div>
-        <script type="module" src="map.ts"></script>
-    </body>
+        <h1>Map notes</h1>
+        <p>Brown - stash</p>
+        <p>Blue circle - start/finish locations</p>
+        <p>Green - you've marked it as visited</p>
+      </div>
+    </div>
+    <script type="module" src="map.ts"></script>
+  </body>
 </html>
