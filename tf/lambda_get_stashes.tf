@@ -1,11 +1,13 @@
 module "lambda_get_stashes" {
   source    = "./lambda"
-  s3_bucket = "ockendenjo-beerienteering-tfstate-rghv9t93fw"
-  s3_key    = "lambdas/get-stashes.zip"
+  s3_bucket = data.aws_s3_bucket.build_artifacts.id
+  s3_key    = local.lambda_manifest["get-stashes"]
   name      = "hbt-beerienteering-get-stashes"
+
   env_vars = {
     GO_LIVE_TIME = "2025-07-17T19:00:08+01:00"
     BUCKET_NAME  = aws_s3_bucket.backend.id
+    PREVIEW_KEY  = "d19f8144-f282-49f7-b7c6-fb3972a8231e"
   }
 }
 

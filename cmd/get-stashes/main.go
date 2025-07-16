@@ -24,18 +24,31 @@ func main() {
 
 		s3Client := s3.NewFromConfig(awsConfig)
 		bucketName := handler.MustGetEnv("BUCKET_NAME")
+		previewKey := handler.MustGetEnv("PREVIEW_KEY")
 
-		return buildHandler(s3Client, bucketName, goLiveTime)
+		return buildHandler(s3Client, bucketName, goLiveTime, previewKey)
 	})
 }
 
-func buildHandler(s3Client *s3.Client, bucketName string, goLiveTime time.Time) H {
+func getKey(ctx context.Context, liveTime time.Time, parameters map[string]string, previewKey string) string {
+	logger := handler.GetLogger(ctx)
+	if time.Now().After(liveTime) {
+		logger.Info("File is live")
+		return "2025.json"
+	}
+	if parameters["key"] == previewKey {
+		logger.Info("Preview key supplied")
+		return "2025.json"
+	}
+
+	logger.Info("Event is not yet live")
+	return "demo.json"
+}
+
+func buildHandler(s3Client *s3.Client, bucketName string, goLiveTime time.Time, previewKey string) H {
 	return func(ctx context.Context, event events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 
-		objectKey := "demo.json"
-		if time.Now().After(goLiveTime) {
-			objectKey = "2025.json"
-		}
+		objectKey := getKey(ctx, goLiveTime, event.QueryStringParameters, previewKey)
 
 		res, err := s3Client.GetObject(ctx, &s3.GetObjectInput{
 			Bucket: aws.String(bucketName),

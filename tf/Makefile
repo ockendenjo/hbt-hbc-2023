@@ -13,4 +13,4 @@ build:
 	cd .. && make build
 
 upload:
-	aws s3 cp ../build/get-stashes/bootstrap.zip "s3://ockendenjo-beerienteering-tfstate-rghv9t93fw/lambdas/get-stashes.zip" --no-progress
+	cd .. && make upload

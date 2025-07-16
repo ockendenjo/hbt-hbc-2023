@@ -2,21 +2,38 @@ package main
 
 import (
 	"archive/zip"
+	"bytes"
+	"crypto/sha256"
+	"encoding/hex"
+	"flag"
 	"fmt"
 	"io"
+	"log"
 	"os"
 	"os/exec"
 	"runtime"
+	"sort"
 	"strings"
 	"time"
 )
 
+var colorCodeRed = "\033[91m"
+var colorCodeReset = "\033[0m"
+
 func main() {
+	var isZipMode bool
+	flag.BoolVar(&isZipMode, "zip", false, "zip")
+	flag.Parse()
+
 	cmd := exec.Command("find", "./cmd", "-type", "f", "-name", "main.go")
-	cmd.Stderr = os.Stderr
 	stdout, err := cmd.Output()
 	if err != nil {
 		panic(err)
+	}
+
+	if os.Getenv("NO_COLOR") != "" {
+		colorCodeRed = ""
+		colorCodeReset = ""
 	}
 
 	mainFiles := strings.Split(string(stdout), "\n")
@@ -28,6 +45,7 @@ func main() {
 	}
 
 	hasError := false
+	errorList := []string{}
 
 	c := make(chan chanResult, len(mainFiles))
 	parallelCount := 0
@@ -36,15 +54,19 @@ func main() {
 	fmt.Printf("Running build with parallisation: %d\n", maxParallel)
 
 	build := func(file string) {
-		go buildLambda(file, c)
+		go buildLambda(file, c, isZipMode)
 		parallelCount++
 		remaining++
 	}
+	okBuilds := make([]chanResult, 0, len(mainFiles))
 	readChan := func() {
 		chanRes := <-c
 		remaining--
 		if chanRes.err != nil {
 			hasError = true
+			errorList = append(errorList, chanRes.lambdaName)
+		} else {
+			okBuilds = append(okBuilds, chanRes)
 		}
 	}
 
@@ -65,11 +87,35 @@ func main() {
 	}
 
 	if hasError {
+		l := log.New(os.Stderr, "", 0)
+		l.Print(colorCodeRed)
+		l.Printf("Lambda binary compilation failed for these main.go files:\n")
+		for _, s := range errorList {
+			l.Printf("   %s/main.go\n", s)
+		}
+		l.Println("See previous logging for error details")
+		l.Print(colorCodeReset)
 		os.Exit(1)
+	}
+	if isZipMode {
+		printHashes(okBuilds)
+	}
+}
+
+func printHashes(okBuilds []chanResult) {
+	sort.Slice(okBuilds, func(i, j int) bool {
+		return okBuilds[i].lambdaName < okBuilds[j].lambdaName
+	})
+	for _, build := range okBuilds {
+		name := strings.Replace(build.lambdaName, "./cmd/", "", 1)
+		fmt.Printf("%s %s\n", build.sha256, name)
 	}
 }
 
 func getParallisation() int {
+	if os.Getenv("GITHUB_ACTIONS") == "true" {
+		return 1
+	}
 	cpus := runtime.NumCPU()
 	if cpus < 4 {
 		//GitHub actions has only 2 CPUs and seems to be slower in parallel
@@ -78,44 +124,64 @@ func getParallisation() int {
 	return cpus
 }
 
-func buildLambda(mainFile string, c chan chanResult) {
+func buildLambda(mainFile string, c chan chanResult, isZipMode bool) {
 	inputDir := getInputDirectory(mainFile)
 	outPath := getOutputPath(mainFile)
+
+	var sb strings.Builder
 
 	cmd := exec.Command("go", "build", "-o", outPath, "-trimpath", "-buildvcs=false", "-ldflags=-w -s", inputDir) // #nosec G204 -- Subprocess needs to be launched with variable
 	cmd.Env = os.Environ()
 	cmd.Env = append(cmd.Env, "GOOS=linux")
 	cmd.Env = append(cmd.Env, "GOARCH=arm64")
 	cmd.Env = append(cmd.Env, "CGO_ENABLED=0")
-	cmd.Stderr = os.Stderr
+	b := &bytes.Buffer{}
+	_, _ = fmt.Fprintf(b, "%sBuild %s\n", colorCodeRed, inputDir)
+	cmd.Stderr = b
 	_, err := cmd.Output()
 	if err != nil {
-		c <- chanResult{err: err}
+		l := log.New(os.Stderr, " ", 0)
+		b.WriteString(colorCodeReset + "\n")
+		l.Print(b.String())
+		c <- chanResult{err: err, lambdaName: inputDir}
 		return
 	}
 
-	size := float64(0)
-	fi, err := os.Stat(outPath)
-	if err == nil {
-		size = float64(fi.Size()) / (1000 * 1000)
-		fmt.Printf("Build %s\nOK    %s %.1fMB\n\n", inputDir, outPath, size)
-	} else {
-		fmt.Printf("Build %s\nOK    %s\n\n", inputDir, outPath)
+	sb.WriteString(fmt.Sprintf("Build %s\n", inputDir))
+	size := getSize(outPath)
+	if size > 0 {
+		sb.WriteString(fmt.Sprintf("OK    %s %.1fMB\n", outPath, size))
 	}
 
-	err = buildZip(outPath)
-	if err != nil {
-		c <- chanResult{err: err}
-		return
+	var binHex string
+	if isZipMode {
+		err = buildZip(outPath)
+		if err != nil {
+			c <- chanResult{err: err, lambdaName: inputDir}
+			return
+		}
+
+		err = os.Remove(outPath)
+		if err != nil {
+			c <- chanResult{err: err, lambdaName: inputDir}
+			return
+		}
+
+		size = getSize(outPath + ".zip")
+		if size > 0 {
+			sb.WriteString(fmt.Sprintf("OK    %s %.1fMB\n", outPath+".zip", size))
+		}
+
+		binHex, err = getBinarySha256(outPath + ".zip")
+		if err != nil {
+			c <- chanResult{err: err, lambdaName: inputDir}
+			return
+		}
 	}
 
-	err = os.Remove(outPath)
-	if err != nil {
-		c <- chanResult{err: err}
-		return
-	}
-
-	c <- chanResult{err: nil}
+	sb.WriteString("\n")
+	fmt.Print(sb.String())
+	c <- chanResult{err: nil, sha256: binHex, lambdaName: inputDir}
 }
 
 func getInputDirectory(mainFile string) string {
@@ -129,10 +195,6 @@ func getOutputPath(mainFile string) string {
 	outDir = strings.ReplaceAll(outDir, "/", "-")
 
 	return fmt.Sprintf("build/%s/bootstrap", outDir)
-}
-
-type chanResult struct {
-	err error
 }
 
 func buildZip(outputPath string) error {
@@ -178,4 +240,35 @@ func addFileToZipDeterministic(zipWriter *zip.Writer, filename string) error {
 
 	_, err = io.Copy(writer, file)
 	return err
+}
+
+type chanResult struct {
+	err        error
+	lambdaName string
+	sha256     string
+}
+
+func getSize(filePath string) float64 {
+	stat, err := os.Stat(filePath)
+	if err != nil {
+		return 0
+	}
+
+	size := float64(stat.Size()) / (1024 * 1024)
+	return size
+}
+
+func getBinarySha256(filePath string) (string, error) {
+	f, err := os.Open(filePath)
+	if err != nil {
+		return "", fmt.Errorf("failed to open file: %w", err)
+	}
+	defer f.Close()
+
+	h := sha256.New()
+	if _, err := io.Copy(h, f); err != nil {
+		return "", fmt.Errorf("failed to calculate hash: %w", err)
+	}
+
+	return hex.EncodeToString(h.Sum(nil)), nil
 }
