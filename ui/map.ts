@@ -100,8 +100,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (stash.type !== "INFO" && !isDemo) {
         html += `<div>`;
         html += `<select id="visit_select"><option value="0">Unvisited</option><option value="1">Visited: no bonus</option>`;
-        for (let i = 1; i < 11; i++) {
-          html += `<option value="${i + 1}">Visited: bonus +${i}</option>`;
+        for (let i = 1; i < 3; i += 1) {
+          html += `<option value="${2 * i + 1}">Visited: ${i} can${i > 1 ? "s" : ""}</option>`;
         }
         html += `</div>`;
       }
