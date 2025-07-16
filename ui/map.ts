@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
     get: (searchParams, prop) => searchParams.get(prop as string),
   });
 
+  let isDemo: boolean = false;
+
   const osmLayer = new TileLayer({
     source: new OSM(),
     opacity: 0.7,
@@ -90,17 +92,12 @@ document.addEventListener("DOMContentLoaded", () => {
             html += `<li>${c}</li>`;
           });
           html += `</ul></div>`;
-        } else {
-          html += `<div class="unknown">Stash content unknown</div>`;
-        }
-        if (stash.microtrot) {
-          html += `<div>Micro-trot friendly</div>`;
         }
       }
       html += `<div class="w3w"><img src="imgs/w3w.png" height="32" width="32" alt="w3w"><a href="w3w://show?threewords=${stash.w3w}" target="_blank">${stash.w3w} (app)</a></div>`;
       html += `<div class="w3w"><img src="imgs/w3w.png" height="32" width="32" alt="w3w"><a href="https://w3w.co/${stash.w3w}" target="_blank">${stash.w3w} (web)</a></div>`;
 
-      if (stash.type !== "INFO") {
+      if (stash.type !== "INFO" && !isDemo) {
         html += `<div>`;
         html += `<select id="visit_select"><option value="0">Unvisited</option><option value="1">Visited: no bonus</option>`;
         for (let i = 1; i < 11; i++) {
@@ -142,16 +139,17 @@ document.addEventListener("DOMContentLoaded", () => {
   function getFilename(): string {
     const key = params["key"];
     if (key === "5f55435a-da7f-4475-a58e-51e48369faac") {
-      return "live.json";
+      return "2025.json";
     }
-    return "demo.json";
-    // return Date.now() > 1698505200000 ? "live.json" : "demo.json";
+    const goLive = new Date("2025-07-17T19:05:00+01:00")
+    return Date.now() > goLive.getTime() ? "2025.json" : "demo.json";
   }
 
   function loadData() {
     fetch(getFilename())
       .then((r) => r.json())
       .then((j: StashesFile) => {
+        isDemo = j.demo;
         if (!j.demo) {
           document.getElementById("demo").style.display = "none";
         }

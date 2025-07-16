@@ -36,7 +36,7 @@ resource "aws_cloudfront_distribution" "cf_distribution" {
   }
 
   ordered_cache_behavior {
-    path_pattern     = "live.json"
+    path_pattern     = "2025.json"
     allowed_methods  = ["GET", "HEAD"]
     cached_methods   = ["GET", "HEAD"]
     target_origin_id = "s3-origin"

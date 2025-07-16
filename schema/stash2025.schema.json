@@ -1,0 +1,64 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/product.schema.json",
+    "title": "HBT Halloween stashes",
+    "location": "Data file",
+    "type": "object",
+    "properties": {
+        "demo": {
+            "type": "boolean"
+        },
+        "stashes": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "minLength": 32
+                    },
+                    "lat": {
+                        "type": "number"
+                    },
+                    "lon": {
+                        "type": "number"
+                    },
+                    "location": {
+                        "type": "string"
+                    },
+                    "contents": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "STASH",
+                            "INFO"
+                        ]
+                    },
+                    "w3w": {
+                        "type": "string"
+                    },
+                    "points": {
+                        "type": "number",
+                        "minimum": 1
+                    }
+                },
+                "required": [
+                    "id",
+                    "lat",
+                    "lon",
+                    "location",
+                    "contents",
+                    "type",
+                    "w3w",
+                    "points"
+                ]
+            }
+        }
+    },
+    "required": ["stashes", "demo"]
+}

@@ -1,0 +1,188 @@
+{
+  "$schema": "../schema/stash2025.schema.json",
+  "demo": false,
+  "stashes": [
+    {
+      "id": "715b818e-e3cf-45c0-88fc-cf29eb508e48",
+      "lat": 55.94028,
+      "lon": -3.18413,
+      "location": "DVC (start)",
+      "contents": [],
+      "type": "INFO",
+      "w3w": "wrong.nurses.prep",
+      "points": 1
+    },
+    {
+      "id": "fb29a6fd-85dc-41dd-a650-778492cdc396",
+      "lat": 55.955894,
+      "lon": -3.164234,
+      "location": "Bellfield brewery (end)",
+      "contents": [],
+      "type": "INFO",
+      "w3w": "finishing.ties.legs",
+      "points": 1
+    },
+    {
+      "id": "0a262857-1d80-4729-8c4f-53ce56592937",
+      "lat": 55.941772,
+      "lon": -3.20065,
+      "location": "Bottom of large tree",
+      "contents": [],
+      "type": "STASH",
+      "w3w": "paints.teach.laying",
+      "points": 1
+    },
+    {
+      "id": "2a21de0e-a955-4804-8129-bcac26a727ba",
+      "lat": 55.94859,
+      "lon": -3.184754,
+      "location": "Behind the bench",
+      "contents": [],
+      "type": "STASH",
+      "w3w": "wool.pool.faced",
+      "points": 1
+    },
+    {
+      "id": "94cbf102-4d31-441b-8be0-220c50b87802",
+      "lat": 55.95293,
+      "lon": -3.152288,
+      "location": "By the wall near the gate",
+      "contents": [],
+      "type": "STASH",
+      "w3w": "soaks.charmingly.fear",
+      "points": 1
+    },
+    {
+      "id": "0f67f798-2eab-4ab2-b769-700b79fd6e22",
+      "lat": 55.944548,
+      "lon": -3.195063,
+      "location": "Behind a slab by the gravel",
+      "contents": [],
+      "type": "STASH",
+      "w3w": "flat.lame.likes",
+      "points": 1
+    },
+    {
+      "id": "3cc4749e-6337-4e06-b04c-7d0e27158fa5",
+      "lat": 55.943092,
+      "lon": -3.166932,
+      "location": "Bottom of the crag by the green fence",
+      "contents": [],
+      "type": "STASH",
+      "w3w": "happen.seated.lived",
+      "points": 1
+    },
+    {
+      "id": "5327d6d5-762e-4b6a-b740-04740c655967",
+      "lat": 55.942877,
+      "lon": -3.158646,
+      "location": "In gorse bush slightly off Crow Hill",
+      "contents": [],
+      "type": "STASH",
+      "w3w": "invite.ships.lower",
+      "points": 1
+    },
+    {
+      "id": "817f94e6-aa8f-45ac-9210-bf9c5f955737",
+      "lat": 55.940047,
+      "lon": -3.166016,
+      "location": "Start of Pipe Dreams Strava segment",
+      "contents": [],
+      "type": "STASH",
+      "w3w": "eating.amuse.club",
+      "points": 1
+    },
+    {
+      "id": "6a387be4-184c-4ba8-ab0b-ca1acf31e7f6",
+      "lat": 55.941691,
+      "lon": -3.201421,
+      "location": "Under a bin",
+      "contents": [],
+      "type": "STASH",
+      "w3w": "neat.fire.charm",
+      "points": 1
+    },
+    {
+      "id": "03182c0e-055c-427e-b35b-92aa24820c64",
+      "lat": 55.957296,
+      "lon": -3.175698,
+      "location": "Under the birch tree. Opposite the holly tree",
+      "contents": [],
+      "type": "STASH",
+      "w3w": "gravy.such.rich",
+      "points": 1
+    },
+    {
+      "id": "a1fd803d-bad7-4ec1-9e19-972174ee36d2",
+      "lat": 55.944629,
+      "lon": -3.178733,
+      "location": "Up the twisty trail, beside the boulder before the U-bend",
+      "contents": [],
+      "type": "STASH",
+      "w3w": "truth.bright.mole",
+      "points": 1
+    },
+    {
+      "id": "2aa1d867-f71e-421c-8370-b4cd43d404d2",
+      "lat": 55.944709,
+      "lon": -3.209899,
+      "location": "in the green bushes immediately to your left as you go through the gates",
+      "contents": [],
+      "type": "STASH",
+      "w3w": "pack.save.odds",
+      "points": 1
+    },
+    {
+      "id": "d372b1ae-adde-4347-b66b-572d68b6de74",
+      "lat": 55.944305,
+      "lon": -3.174783,
+      "location": "Under a tree",
+      "contents": [],
+      "type": "STASH",
+      "w3w": "froth.employ.prep",
+      "points": 1
+    },
+    {
+      "id": "2b1a5b24-4187-4c15-8c96-be476092e341",
+      "lat": 55.954951,
+      "lon": -3.162548,
+      "location": "Right in the corner of the car park, in the bushes, under tree, close to the property to let sign.",
+      "contents": [],
+      "type": "STASH",
+      "w3w": "joke.backup.torn",
+      "points": 1
+    },
+    {
+      "id": "661f9182-0654-4ae3-9a5d-aca2b315ff9f",
+      "lat": 55.945114,
+      "lon": -3.187211,
+      "location": "Bayes Centre courtyard - bottom of the tree closest to Poterrow.",
+      "contents": [],
+      "type": "STASH",
+      "w3w": "limbs.shout.galaxy",
+      "points": 1
+    },
+    {
+      "id": "6db2ccf6-9271-4d50-a255-6d55b7044055",
+      "lat": 55.954223,
+      "lon": -3.165294,
+      "location": "In the large tree",
+      "contents": [],
+      "type": "STASH",
+      "w3w": "cult.achieving.hammer",
+      "points": 1
+    },
+    {
+      "id": "892194c1-55ca-4d52-9cfd-2dd76122c0b6",
+      "lat": 55.944305,
+      "lon": -3.183935,
+      "location": "UNTIL 8PM ONLY. Map marker at building entrance of Southside community centre. Stash with Jess in room 2. UNTIL 8PM ONLY.",
+      "contents": [
+        "Snacks only - no alcohol"
+      ],
+      "type": "STASH",
+      "w3w": "studio.crisp.nurses",
+      "points": 1
+    }
+  ]
+}

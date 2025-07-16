@@ -22,6 +22,7 @@ jobs:
         run: |
           ./yajsv.linux.amd64 -s schema/stashes.schema.json ui/live.json
           ./yajsv.linux.amd64 -s schema/stashes.schema.json ui/demo.json
+          ./yajsv.linux.amd64 -s schema/stash2025.schema.json ui/2025.json
 
   test:
     name: test
@@ -59,6 +60,8 @@ jobs:
           cp /tmp/live.json ui/dist
           jq -c . < ui/demo.json > /tmp/demo.json
           cp /tmp/demo.json ui/dist
+          jq -c . < ui/2025.json > /tmp/2025.json
+          cp /tmp/2025.json ui/dist
           cp -r ui/imgs ui/dist/imgs
 
       - name: Upload artifact
