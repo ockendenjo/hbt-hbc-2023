@@ -137,12 +137,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let stashes: Stash[];
 
   function getFilename(): string {
-    const key = params["key"];
-    if (key === "5f55435a-da7f-4475-a58e-51e48369faac") {
+    if (window.location.hostname === "localhost") {
       return "2025.json";
     }
-    const goLive = new Date("2025-07-17T19:05:00+01:00");
-    return Date.now() > goLive.getTime() ? "2025.json" : "demo.json";
+    return "/stashes";
   }
 
   function loadData() {
