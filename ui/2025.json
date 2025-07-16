@@ -40,7 +40,7 @@
       "contents": [],
       "type": "STASH",
       "w3w": "wool.pool.faced",
-      "points": 2
+      "points": 3
     },
     {
       "id": "94cbf102-4d31-441b-8be0-220c50b87802",
@@ -90,7 +90,7 @@
       "contents": [],
       "type": "STASH",
       "w3w": "eating.amuse.club",
-      "points": 3
+      "points": 4
     },
     {
       "id": "6a387be4-184c-4ba8-ab0b-ca1acf31e7f6",
@@ -190,7 +190,107 @@
       "contents": ["Mushrooms"],
       "type": "STASH",
       "w3w": "unity.drip.sheets",
+      "points": 2
+    },
+    {
+      "id": "fa50ea03-20ce-4c41-be65-c247cf1fef59",
+      "lat": 55.945922,
+      "lon": -3.151373,
+      "location": "Under a bush",
+      "contents": [],
+      "type": "STASH",
+      "w3w": "online.latest.hike",
+      "points": 4
+    },
+    {
+      "id": "f44f1d91-caff-4a77-b17a-3390780feb35",
+      "lat": 55.945707,
+      "lon": -3.176614,
+      "location": "Below '65 tonnes of rock' sign on fence",
+      "contents": [],
+      "type": "STASH",
+      "w3w": "hungry.backup.exist",
       "points": 1
+    },
+    {
+      "id": "9ccc04e0-e401-4201-b7e4-23e3ed02a099",
+      "lat": 55.950666,
+      "lon": -3.173434,
+      "location": "In drain a base of wall corner",
+      "contents": [],
+      "type": "STASH",
+      "w3w": "verse.crisp.rocks",
+      "points": 1
+    },
+    {
+      "id": "96596943-e387-46a0-bf4a-284328f94bb3",
+      "lat": 55.948078,
+      "lon": -3.170255,
+      "location": "Base of broom bush, side farthest from path",
+      "contents": [],
+      "type": "STASH",
+      "w3w": "spared.letter.offers",
+      "points": 2
+    },
+    {
+      "id": "ef13617b-172d-4dd5-bd11-9dde69167350",
+      "lat": 55.948456,
+      "lon": -3.169485,
+      "location": "Base of warning sign",
+      "contents": [],
+      "type": "STASH",
+      "w3w": "lights.parks.page",
+      "points": 2
+    },
+    {
+      "id": "d6ff8c03-dbb1-4124-8e38-f7054e53bfbb",
+      "lat": 55.945464,
+      "lon": -3.169581,
+      "location": "Base of hawthorn bush, just off bog-trot climb",
+      "contents": [],
+      "type": "STASH",
+      "w3w": "drape.risen.agree",
+      "points": 3
+    },
+    {
+      "id": "4a484cb2-dab9-4cfe-9593-4a480a47d2cd",
+      "lat": 55.948563,
+      "lon": -3.163415,
+      "location": "Tucked in grass by edge of rock",
+      "contents": [],
+      "type": "STASH",
+      "w3w": "scale.prove.cowboy",
+      "points": 3
+    },
+    {
+      "id": "f62246ed-d527-4148-aa5d-53ff1358c5dd",
+      "lat": 55.946273,
+      "lon": -3.163319,
+      "location": "Base of small crag, below path and gorse bush",
+      "contents": [],
+      "type": "STASH",
+      "w3w": "bleat.gross.relax",
+      "points": 3
+    },
+    {
+      "id": "c12bac40-eb8e-4d5e-aef2-8f7377d0b12d",
+      "lat": 55.947054,
+      "lon": -3.157731,
+      "location": "Nestled in heather at base of cliff",
+      "contents": [],
+      "type": "STASH",
+      "w3w": "string.vine.editor",
+      "points": 4
+    },
+    {
+      "id": "ec592419-7b2d-4644-88f2-fc408ca90085",
+      "lat": 55.949776,
+      "lon": -3.156768,
+      "location": "Base of conifer tree",
+      "contents": [],
+      "type": "STASH",
+      "w3w": "natively.name.feeds",
+      "points": 4
     }
   ]
 }
