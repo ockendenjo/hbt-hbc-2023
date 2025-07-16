@@ -1,6 +1,5 @@
 resource "aws_cloudfront_distribution" "cf_distribution" {
   enabled             = true
-  comment             = "Terraform equivalent of CDK distribution"
   default_root_object = "index.html"
   price_class         = "PriceClass_100"
   http_version        = "http2and3"
@@ -13,6 +12,19 @@ resource "aws_cloudfront_distribution" "cf_distribution" {
     acm_certificate_arn      = aws_acm_certificate.cert.arn
     ssl_support_method       = "sni-only"
     minimum_protocol_version = "TLSv1.2_2021"
+  }
+
+  origin {
+    domain_name = "${aws_api_gateway_rest_api.my_api.id}.execute-api.eu-west-1.amazonaws.com"
+    origin_id   = "api-gateway"
+    origin_path = "/api"
+
+    custom_origin_config {
+      http_port              = 80
+      https_port             = 443
+      origin_protocol_policy = "https-only"
+      origin_ssl_protocols   = ["TLSv1.2"]
+    }
   }
 
   origin {
@@ -40,6 +52,18 @@ resource "aws_cloudfront_distribution" "cf_distribution" {
     allowed_methods  = ["GET", "HEAD"]
     cached_methods   = ["GET", "HEAD"]
     target_origin_id = "s3-origin"
+
+    viewer_protocol_policy = "redirect-to-https"
+    compress               = true
+
+    cache_policy_id = data.aws_cloudfront_cache_policy.caching_disabled.id
+  }
+
+  ordered_cache_behavior {
+    path_pattern     = "stashes"
+    allowed_methods  = ["GET", "HEAD"]
+    cached_methods   = ["GET", "HEAD"]
+    target_origin_id = "api-gateway"
 
     viewer_protocol_policy = "redirect-to-https"
     compress               = true
