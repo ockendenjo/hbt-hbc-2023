@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (stash.type !== "INFO") {
         selectElem = document.getElementById(
-          "visit_select",
+          "visit_select"
         ) as HTMLSelectElement;
         const points = storageSvc.getVisited(stash.id);
         selectElem.value = String(points);
@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (key === "5f55435a-da7f-4475-a58e-51e48369faac") {
       return "2025.json";
     }
-    const goLive = new Date("2025-07-17T19:05:00+01:00")
+    const goLive = new Date("2025-07-17T19:05:00+01:00");
     return Date.now() > goLive.getTime() ? "2025.json" : "demo.json";
   }
 

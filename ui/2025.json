@@ -177,9 +177,7 @@
       "lat": 55.944305,
       "lon": -3.183935,
       "location": "UNTIL 8PM ONLY. Map marker at building entrance of Southside community centre. Stash with Jess in room 2. UNTIL 8PM ONLY.",
-      "contents": [
-        "Snacks only - no alcohol"
-      ],
+      "contents": ["Snacks only - no alcohol"],
       "type": "STASH",
       "w3w": "studio.crisp.nurses",
       "points": 1
