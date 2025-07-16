@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (stash.type !== "INFO") {
         selectElem = document.getElementById(
-          "visit_select"
+          "visit_select",
         ) as HTMLSelectElement;
         const points = storageSvc.getVisited(stash.id);
         selectElem.value = String(points);

@@ -7,8 +7,8 @@ export function getHaloweenStyle(stash: Stash): Style {
   const textFill = stash.visited
     ? "white"
     : stash.microtrot
-    ? "black"
-    : "white";
+      ? "black"
+      : "white";
 
   let image: ImageStyle;
   switch (stash.type) {
