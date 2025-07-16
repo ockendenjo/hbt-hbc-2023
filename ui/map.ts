@@ -140,6 +140,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.location.hostname === "localhost") {
       return "2025.json";
     }
+
+    const key = params["key"];
+    if (key) {
+      return `/stashes?key=${key}`;
+    }
     return "/stashes";
   }
 
