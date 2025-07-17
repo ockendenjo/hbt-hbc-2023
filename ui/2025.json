@@ -176,7 +176,7 @@
       "id": "c1ff4e38-5709-4ecb-b8c5-9278c7b4c548",
       "lat": 55.953701,
       "lon": -3.1758253,
-      "location": "Near William Knox gravestone. Please walk in cemetery. Mushrooms can count for bonus points at this stash if consumed on location.",
+      "location": "Near William Knox gravestone. Please walk in cemetery. Mushrooms can count for bonus points at this stash if consumed on location. Max 1 can per team.",
       "contents": ["Mushrooms"],
       "type": "STASH",
       "w3w": "unity.drip.sheets",
