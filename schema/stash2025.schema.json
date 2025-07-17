@@ -45,6 +45,9 @@
                     "points": {
                         "type": "number",
                         "minimum": 1
+                    },
+                    "hide": {
+                        "type": "boolean"
                     }
                 },
                 "required": [
