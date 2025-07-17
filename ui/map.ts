@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return j.stashes;
       })
       .then((s) => {
-        stashes = s;
+        stashes = s.filter((st) => !st.hide);
         stashes.forEach((s) => {
           s.visited = storageSvc.getVisited(s.id) > 0;
           renderStash(vectorSource, s);

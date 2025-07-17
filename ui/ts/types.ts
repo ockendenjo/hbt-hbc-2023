@@ -14,6 +14,7 @@ export type Stash = {
   w3w: string;
   points: number;
   visited: boolean;
+  hide?: boolean;
 };
 
 export type StashType = "STASH" | "HOUSE" | "INFO";
