@@ -5,7 +5,7 @@ module "lambda_get_stashes" {
   name      = "hbt-beerienteering-get-stashes"
 
   env_vars = {
-    GO_LIVE_TIME = "2025-07-17T19:00:08+01:00"
+    GO_LIVE_TIME = "2025-07-17T18:58:00+01:00"
     BUCKET_NAME  = aws_s3_bucket.backend.id
     PREVIEW_KEY  = "d19f8144-f282-49f7-b7c6-fb3972a8231e"
   }
